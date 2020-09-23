@@ -1,14 +1,31 @@
 .greeting {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -50px;
-    margin-left: -100px;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
-#greeting-button {
-    margin: 15px;
+.greeting-button {
+    border: 2px solid white;
+    box-sizing: border-box;
+    width: 125px;
+    height: 38px;
     color: white;
- 
-}
+    border-radius: 26.5025px;
+    margin: 30px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 7px;
+    transition: 0.5s;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .greeting-button:hover {
+    color: white;
+    background-color: #77A6F7;
+    border: 2px solid #77A6F7;
+  }
