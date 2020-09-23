@@ -1,10 +1,11 @@
 import React from 'react';
+import './landing.css'
 
-import AuthContainer from './AuthContainer'
+import Greeting from './Greeting'
 
 function LandingContainer() {
     return (
-        <AuthContainer />
+        <Greeting />
     )
 }
 
