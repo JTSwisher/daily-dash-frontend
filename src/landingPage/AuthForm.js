@@ -6,10 +6,10 @@ class AuthForm extends Component {
     
     render() {
         return (
-           <div>
-               
-           </div> 
-    
+            <form className="auth-form">
+                
+            </form>
+          
         )
     }
     
