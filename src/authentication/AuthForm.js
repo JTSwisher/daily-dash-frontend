@@ -11,8 +11,15 @@ class AuthForm extends Component {
 
     render() {
         return (
-            <div>
-                
+            <div className="wrapper">
+                <div className="container">
+                    <h1>Welcome!</h1>
+                    <form className="form">
+                        <input type="text" placeholder="Username" />
+                        <input type="password" placeholder="Password" />
+                        <button type="submit" id="login-button">Submit</button>
+                    </form>
+                </div>
             </div>
         )
     }
