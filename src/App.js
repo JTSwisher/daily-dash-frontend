@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import LandingContainer from './landingPage/LandingContainer'
 import Login from './authentication/Login'
 import Signup from './authentication/Signup'
+import HomeContainer from './home/HomeContainer'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route exact path="/" component={LandingContainer}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/>
+      
     </BrowserRouter>
   );
 }
