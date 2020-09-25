@@ -2,7 +2,7 @@ import React from 'react';
 import AuthForm from './AuthForm'
 import './Auth.css'
 
-const submitUser = user => {
+const submitUser = user => { //temp will be handled by redux dispatch
     fetch("http://localhost:3001/api/v1/users", {
         method: "POST",
         headers: {
