@@ -5,10 +5,10 @@ function Greeting() {
     return (
         <div className="greeting">
             <h1>Welcome to DailyDash!</h1>
-            <Link to="/authenticate">
+            <Link to="/login">
                 <a className="greeting-button" target="_blank" rel="noopener noreferrer">Login</a>
             </Link>
-            <Link to="/authenticate">
+            <Link to="/signup">
                 <a className="greeting-button" rel="noopener noreferrer">Signup</a>
             </Link>
         </div>

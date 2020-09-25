@@ -19,25 +19,12 @@ class AuthForm extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault()
-        this.submitUser(this.state)
+        this.props.handleLoginCallback(this.state)
         this.setState({
             username: '',
             name: '',
             password: ''
         })
-    }
-
-    submitUser = user => {
-        fetch("http://localhost:3001/api/v1/login", {
-            method: "POST",
-            headers: {
-                "Accept":"application/json",
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify({user: user})
-        })
-        .then(res => res.json())
-        .then(user => console.log(user))
     }
 
     render() {
