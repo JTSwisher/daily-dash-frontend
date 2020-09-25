@@ -1,0 +1,39 @@
+.navBar {
+    height: 100%;
+    width: 3%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+}
+
+.nav-icons {
+    position: fixed;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.nav-icons:hover {
+    color: #77A6F7;
+}
+
+#home {
+    margin-top: 20px;
+}
+
+#movies {
+    margin-top: 300px;
+}
+
+#news {
+    margin-top: 380px;
+}
+
+#hacker-news {
+    margin-top: 460px;
+}
+
+#settings {
+    bottom: 20px;
+}
+
