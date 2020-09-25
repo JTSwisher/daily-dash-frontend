@@ -6,6 +6,7 @@
     margin-top: -200px;
     height: 400px;
     overflow: hidden;
+    
 }
 
 .container {
@@ -19,24 +20,40 @@
 form {
     position: relative;
     padding: 5px 0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 input {
     display: block;
     text-align: center;
     appearance: none;
+    background-color: rgba(255,255,255,0.2);
+    border: 0.1px solid white;
     outline: 0;
     width: 250px;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
-    font-size: 18px;
+    font-size: 20px;
     transition-duration: 0.25s;
     font-weight: 300;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 input:focus {
-    width: 300px;
+    width: 280px;
+    padding: 13px 15px;
+    background-color: rgba(255,255,255,0.9);
+    color: black;
+}
+
+input:focus::placeholder{
+    color: grey;
+}
+
+::placeholder {
+    color: white;
 }
 
 button {
@@ -46,11 +63,12 @@ button {
     border: 1.5px solid white;
     padding: 10px 15px;
     color: white;
-    border-radius: 3px;
+    border-radius: 10px;
     width: 280px;
     cursor: pointer;
     font-size: 18px;
     transition-duration: 0.25s;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 button:hover {

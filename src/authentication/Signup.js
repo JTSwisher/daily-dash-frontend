@@ -2,10 +2,8 @@ import React from 'react';
 import AuthForm from './AuthForm'
 import './Auth.css'
 
-function AuthContainer() {
-    return (
+export default function Signup() {
+    render(
         <AuthForm />
     )
 }
-
-export default AuthContainer;
