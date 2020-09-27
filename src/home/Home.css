@@ -1,7 +1,12 @@
 .home-container {
     margin-left: 200px;
-    background-color: white;
-    height: 450px;
+    border: 1px solid white;
+    height: 650px;
     width: 450px;
-    margin-top: 300px;
+    margin-top: 5%;
+    color: white;
+}
+
+.home-greeting {
+    font-size: 1.5em;
 }
