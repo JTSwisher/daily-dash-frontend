@@ -1,3 +1,7 @@
+.app {
+    display: flex;
+}
+
 .navBar {
     height: 100%;
     width: 3%;

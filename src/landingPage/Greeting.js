@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Greeting() {
     return (
         <div className="greeting">
-            <h1>Welcome to DailyDash!</h1>
+            <h1>DailyDash!</h1>
             <Link to="/login">
                 <a className="greeting-button" target="_blank" rel="noopener noreferrer">Login</a>
             </Link>
