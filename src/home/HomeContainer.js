@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css'
+import Clock from './Clock'
 
 let getDate = () => {
     let d = new Date().toString().split(' ');
@@ -11,10 +12,13 @@ let getDate = () => {
 }
 
 export default function HomeContainer() {
+
+    let time = <Clock />
     return(
         <div className="home-container">
             <p className="home-greeting">Welcome Jeff</p>
-            <h4 className="home-date">{getDate()}</h4>
+            { time }
+            <h2 className="home-date">{ getDate() }</h2>
         </div>
     )
 }
