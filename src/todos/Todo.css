@@ -1,17 +1,20 @@
-
+.todo-header {
+    margin-top: 10px;
+}
 #header {
     display: inline;
 }
 
 #hr {
     margin: 0;
-    
+    width: 100%;
 }
 
 #plus-icon {
-    margin-left: 80%;
     font-size: 1.4em;
     cursor: pointer;
+    margin-bottom: 5px;
+    float: right;
 }
 
 #plus-icon:hover {
@@ -67,4 +70,14 @@
 
 #form-submit-icon:hover {
     color: #77A6F7;
+}
+
+.todos-display {
+    height: 400px;
+    overflow: scroll;
+    scrollbar-color: white;
+}
+
+#todo {
+    margin-bottom: 10px;
 }
