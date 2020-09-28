@@ -17,10 +17,15 @@ export default function HomeContainer() {
             <div className="menu">
                 <HomeMenuIcons />
             </div>
-            <div className="content">
-                <TodoContainer />
-                <GoogleSearchBar />
+            <div className="home-content-main">
+                <div className="content">
+                    <TodoContainer />
+                </div>
+                <div className="google-search-container">
+                    <GoogleSearchBar />
+                </div>
             </div>
+            
         </div>
     )
 }
