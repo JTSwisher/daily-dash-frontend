@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Todo.css'
 
-class CreateTodoFrom extends Component {
+class TodoFrom extends Component {
 
     state = {
         body: '', 
@@ -33,4 +33,4 @@ class CreateTodoFrom extends Component {
         
 }
 
-export default CreateTodoFrom
+export default TodoFrom
