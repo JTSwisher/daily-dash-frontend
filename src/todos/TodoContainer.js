@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState} from 'react';
 import './Todo.css'
 import { BsPlusCircle } from 'react-icons/bs'
+import CreateTodoForm from './CreateTodoForm'
 
 export default function TodoContainer() {
+    const [formDisplay, setFormDisplay] = useState(false)
 
-    //create state set to null when true render form to create new todo
-    // add icon to change state 
+    let todoForm;
+    if (formDisplay) todoForm = <CreateTodoForm submit={createTodo}/>;
 
     return (
         <>
         <p id="header">Todos</p>
-        <BsPlusCircle id="plus-icon"/>
+        <BsPlusCircle id="plus-icon" onClick={() => setFormDisplay(!formDisplay)} />
         <hr id="hr"/>
+        { todoForm }
         </>
     )
 }

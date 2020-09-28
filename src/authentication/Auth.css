@@ -20,7 +20,6 @@
 form {
     position: relative;
     padding: 5px 0;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 
 input {
@@ -38,7 +37,7 @@ input {
     transition-duration: 0.25s;
     font-weight: 300;
     color: white;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 input:focus {
@@ -76,7 +75,7 @@ button {
     cursor: pointer;
     font-size: 18px;
     transition-duration: 0.25s;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 button:hover {

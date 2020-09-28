@@ -16,7 +16,7 @@ class AuthForm extends Component {
     }
 
     handleFormSubmit = e => {
-        e.preventDefault()
+        e.preventDefault();
         this.props.handleLoginCallback(this.state)
         this.setState({
             username: '',
