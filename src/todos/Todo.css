@@ -7,7 +7,7 @@
 
 #hr {
     margin: 0;
-    width: 100%;
+    width: 99%;
 }
 
 #plus-icon {
@@ -73,7 +73,7 @@
 }
 
 .todos-display {
-    height: 400px;
+    height: 300px;
     overflow: scroll;
     scrollbar-color: white;
 }
