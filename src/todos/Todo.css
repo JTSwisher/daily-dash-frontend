@@ -1,0 +1,20 @@
+
+#header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline;
+}
+
+#hr {
+    margin: 0;
+}
+
+#plus-icon {
+    padding-left: 80%;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#plus-icon:hover {
+    color: #77A6F7;
+}

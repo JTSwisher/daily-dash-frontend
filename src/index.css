@@ -2,11 +2,13 @@ body, html {
   height: 100%;
   width: 100%;
   margin: 0;
+  padding: 0;
   overflow: hidden;
   background: url('./bg.jpg') fixed;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 1px;
 }
 

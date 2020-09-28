@@ -1,22 +1,60 @@
 .home-container {
-    margin-left: 200px;
+    margin-left: 10%;
     border: 1px solid white;
-    height: 650px;
-    width: 450px;
-    margin-top: 5%;
+    height: 85%;
+    width: 85%;
+    margin-top: 4%;
     color: white;
     padding: 0;
 }
 
+/* Home greeting styles */
+
 .home-greeting {
-    font-size: 1.75em;
+    border: 1px solid white;
+    width: 200px;
+}
+
+#greeting {
+    font-size: 1.5em;
     margin-top: 0;
+    margin-bottom: 35px;   
 }
 
-.home-date {
+.date {
+    font-size: 1.15em;
     margin: 0;
 }
 
-.home-time {
+.time {
+    font-size: 2em;
     margin: 0;
+}
+
+/* Home menu styles */
+.menu {
+    color: white;
+    font-size: 1.5em;
+    margin-top: 5%;
+    margin-left: 4%;
+    width: 150px;
+}
+
+.menu-icon {
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.menu-icon:hover {
+    color: #77A6F7;
+}
+
+/* Home content styles */
+
+.content {
+    width: 35%;
+    height: 60%;
+    margin-left: 4%;
+    padding: 0;
+    overflow: scroll;
 }

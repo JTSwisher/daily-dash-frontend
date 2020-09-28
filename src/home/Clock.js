@@ -16,6 +16,6 @@ export default function Clock() {
         }
 
     return(
-        <h1 className="home-time">{ time.toLocaleTimeString() }</h1>
+        <p className="time">{ time.toLocaleTimeString().toLowerCase() }</p>
     )
 }
