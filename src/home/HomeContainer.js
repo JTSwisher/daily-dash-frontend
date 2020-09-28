@@ -4,6 +4,7 @@ import Clock from './Clock'
 import CurrentDate from './CurrentDate'
 import HomeMenuIcons from './HomeMenuIcons'
 import TodoContainer from '../todos/TodoContainer'
+import GoogleSearchBar from './GoogleSearchBar'
 
 export default function HomeContainer() {
     return(
@@ -18,6 +19,7 @@ export default function HomeContainer() {
             </div>
             <div className="content">
                 <TodoContainer />
+                <GoogleSearchBar />
             </div>
         </div>
     )
