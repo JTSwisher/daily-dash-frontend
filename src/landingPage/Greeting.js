@@ -6,10 +6,10 @@ function Greeting() {
         <div className="greeting">
             <h1>DailyDash!</h1>
             <Link to="/login">
-                <a className="greeting-button" target="_blank" rel="noopener noreferrer">Login</a>
+                <a href="/login" className="greeting-button" rel="noopener noreferrer">Login</a>
             </Link>
             <Link to="/signup">
-                <a className="greeting-button" rel="noopener noreferrer">Signup</a>
+                <a href="/signup" className="greeting-button" rel="noopener noreferrer">Signup</a>
             </Link>
         </div>
     )

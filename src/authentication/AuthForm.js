@@ -28,7 +28,7 @@ class AuthForm extends Component {
     render() {
         let nameInput;
         if (this.props.type === "signup") {
-            nameInput = <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={e => this.handleFormChange(e)} />
+            nameInput = <input type="text" id="auth-input" placeholder="Name" value={this.state.name} name="name" onChange={e => this.handleFormChange(e)} />
         }
 
         return (
