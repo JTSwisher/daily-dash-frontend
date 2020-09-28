@@ -7,6 +7,7 @@
 
 #hr {
     margin: 0;
+    
 }
 
 #plus-icon {
@@ -19,26 +20,30 @@
     color: #77A6F7;
 }
 
-.todo-form {
+.todo-form-container {
     margin-top: 15px;
+    padding: 0;
+    border: 1px solid white;
+}
+
+#todo-form{
+    padding: 0;
 }
 
 #todo-input {
-    position: absolute;
     appearance: none;
     background-color: rgba(255,255,255,0.2);
     border: 0.1px solid white;
     outline: 0;
-    width: 370px;
+    width: 87%;
     border-radius: 10px;
-    padding: 10px 15px;
-    margin: 0 auto 10px auto;
+    padding: 6px 10px;
+    margin: 0 auto 0 auto;
     font-size: 1em;
     transition-duration: 0.25s;
     font-weight: 300;
     color: white;
     font-family: 'Nunito', sans-serif;
-    right: 0;
 }
 
 #todo-input:hover {
@@ -50,11 +55,12 @@
 }
 
 #button-wrapper {
+    position: absolute;
     background: none;
-    margin: 0px;
-    padding: 0px;
+    padding: 0;
     border: none;
     width: 0;
+    margin-left: 10px;
     margin-top: 10px;
 }
 

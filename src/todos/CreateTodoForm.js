@@ -25,12 +25,12 @@ class TodoFrom extends Component {
 
     render(){
         return(
-            <div className="todo-form">
-            <form id="todo-form "onSubmit={e => this.handleSubmit(e)}>
-                <input id="todo-input" type="text-area" placeholder="New Todo..." name="body" value={ this.state.body } onChange={e => this.handleChange(e)}></input>
-                <button type="submit" id="button-wrapper"><BsPlusCircle id="form-submit-icon" /></button>
-            </form>
-        </div>
+            <div className="todo-form-container">
+                <form id="todo-form "onSubmit={e => this.handleSubmit(e)}>
+                    <input id="todo-input" type="text-area" placeholder="New Todo..." name="body" value={ this.state.body } onChange={e => this.handleChange(e)}></input>
+                    <button type="submit" id="button-wrapper"><BsPlusCircle id="form-submit-icon" /></button>
+                </form>
+            </div>
         )
     }
         
