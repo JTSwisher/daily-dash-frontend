@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import './Todo.css'
-import { BsPlusCircle } from 'react-icons/bs'
+import { BsFilePlus } from 'react-icons/bs'
 import TodoForm from './CreateTodoForm'
 
 export default function TodoContainer() {
@@ -20,12 +20,12 @@ export default function TodoContainer() {
     }
 
     let todoForm;
-    if (formDisplay) todoForm = <TodoForm submit={createTodo}/>;
+    if (formDisplay) todoForm = <TodoForm submit={createTodo} updateFormDisplay={setFormDisplay}/>;
 
     return (
         <>
         <p id="header">Todos</p>
-        <BsPlusCircle id="plus-icon" onClick={() => setFormDisplay(!formDisplay)} />
+        <BsFilePlus id="plus-icon" onClick={() => setFormDisplay(!formDisplay)} />
         <hr id="hr"/>
         { todoForm }
         </>

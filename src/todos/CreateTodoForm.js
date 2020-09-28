@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Todo.css'
+import { BsPlusCircle } from 'react-icons/bs'
 
 class TodoFrom extends Component {
 
@@ -18,6 +19,7 @@ class TodoFrom extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.submit(this.state)
+        this.props.updateFormDisplay(false)
         this.setState({body: '', user_id: 1})
     }
 
@@ -26,6 +28,7 @@ class TodoFrom extends Component {
             <div className="todo-form">
             <form id="todo-form "onSubmit={e => this.handleSubmit(e)}>
                 <input id="todo-input" type="text-area" placeholder="New Todo..." name="body" value={ this.state.body } onChange={e => this.handleChange(e)}></input>
+                <button type="submit" id="button-wrapper"><BsPlusCircle id="form-submit-icon" /></button>
             </form>
         </div>
         )

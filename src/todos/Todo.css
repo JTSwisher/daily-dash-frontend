@@ -11,7 +11,7 @@
 
 #plus-icon {
     margin-left: 80%;
-    font-size: 1.2em;
+    font-size: 1.4em;
     cursor: pointer;
 }
 
@@ -19,20 +19,49 @@
     color: #77A6F7;
 }
 
-
-
 .todo-form {
     margin-top: 15px;
-    
 }
 
 #todo-input {
-    width: 380px;
+    position: absolute;
+    appearance: none;
+    background-color: rgba(255,255,255,0.2);
+    border: 0.1px solid white;
+    outline: 0;
+    width: 370px;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
     font-size: 1em;
+    transition-duration: 0.25s;
+    font-weight: 300;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    right: 0;
 }
 
-#rodo-input:focus {
-    padding: 13px 15px;
-    background-color: rgba(255,255,255,0.9);
-    color: black;
+#todo-input:hover {
+    background-color: rgba(255,255,255,0.5);
+}
+
+#todo-input:focus:hover{
+    background-color: rgba(255,255,255,0.2);
+}
+
+#button-wrapper {
+    background: none;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    width: 0;
+    margin-top: 10px;
+}
+
+#form-submit-icon {
+    cursor: pointer;
+}
+
+#form-submit-icon:hover {
+    color: #77A6F7;
 }

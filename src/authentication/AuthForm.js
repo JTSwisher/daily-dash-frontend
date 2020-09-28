@@ -36,8 +36,8 @@ class AuthForm extends Component {
                 <div className="container">
                     <form className="form" onSubmit={ e => this.handleFormSubmit(e)}>
                         { nameInput }
-                        <input type="text" placeholder="Username" value={this.state.username} name="username" onChange={e => this.handleFormChange(e)} />
-                        <input type="password" placeholder="Password" value={this.state.password} name="password" onChange={e => this.handleFormChange(e)} />
+                        <input type="text" id="auth-input" placeholder="Username" value={this.state.username} name="username" onChange={e => this.handleFormChange(e)} />
+                        <input type="password" id="auth-input" placeholder="Password" value={this.state.password} name="password" onChange={e => this.handleFormChange(e)} />
                         <button type="submit" id="login-button">Submit</button>
                     </form>
                 </div>
