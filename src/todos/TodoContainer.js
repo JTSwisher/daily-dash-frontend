@@ -2,14 +2,18 @@ import React, { useState, useEffect, useCallback} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTodos, createTodo } from './TodoActions'
 import './Todo.css';
-import { BsFilePlus } from 'react-icons/bs';
+import { BsFilePlus, BsArrowUpDown } from 'react-icons/bs';
 import TodoForm from './CreateTodoForm'
 import DisplayTodos from './DisplayTodos'
 
 export default function TodoContainer() {
     const [formDisplay, setFormDisplay] = useState(false)
-    const dispatch = useDispatch();
+    const [dateSort, setDateSort] = useState(false)
+    const dispatch = useDispatch()
+
     const todosArray = useSelector(state => state.todo.todos)
+    const sortedNewestFirstTodos = [...todosArray].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    let todos = dateSort ? sortedNewestFirstTodos : todosArray;
 
     const saveNewTodo = useCallback(
         (todo) => dispatch(createTodo(todo)),
@@ -32,8 +36,9 @@ export default function TodoContainer() {
         </div>
         { todoForm }
         <div className="todos-display">
-            <DisplayTodos todos={todosArray}/>
+            <DisplayTodos todos={ todos }/>
         </div>
+        <BsArrowUpDown id="sort-icon" onClick={() => setDateSort(!dateSort)}/>
         </>
     )
 }

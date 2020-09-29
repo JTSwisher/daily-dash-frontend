@@ -75,20 +75,46 @@
 .todos-display {
     height: 450px;
     overflow: scroll;
-    scrollbar-color: white;
+    scrollbar-shadow-color: transparent;
+    scrollbar-track-color: transparent;
 }
 
 .todo {
     margin-bottom: 20px;
+    
 }
 
 #todo-title {
     margin: 0;
+    display: inline-block;
     font-size: .90em;
+    width: 90%;
 }
 
 #todo-created-date {
     margin: 0;
+    width: 90%;
     font-size: .70em;
     color: rgba(255,255,255,0.6);
+}
+
+#todo-complete-icon {
+    position: relative;
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#todo-complete-icon:hover {
+    color: #77A6F7;
+}
+
+#sort-icon {
+    margin-top: 20px;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
+#sort-icon:hover {
+    color: #77A6F7;
 }
