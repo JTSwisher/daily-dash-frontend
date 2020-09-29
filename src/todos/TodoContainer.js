@@ -4,25 +4,25 @@ import { getTodos, createTodo } from './TodoActions'
 import './Todo.css';
 import { BsFilePlus } from 'react-icons/bs';
 import TodoForm from './CreateTodoForm'
+import DisplayTodos from './DisplayTodos'
 
 export default function TodoContainer() {
     const [formDisplay, setFormDisplay] = useState(false)
     const dispatch = useDispatch();
     const todosArray = useSelector(state => state.todo.todos)
-    let todos = todosArray.map((e, i) => <li key={i}>{e.body}</li>)
-    let todoForm;
-    
-
-    useEffect(() => {
-        dispatch(getTodos(1))
-    }, [])
 
     const saveNewTodo = useCallback(
         (todo) => dispatch(createTodo(todo)),
         [dispatch]
-    )
+    );
+
+    let todoForm;
     if (formDisplay) todoForm = <TodoForm  submit={saveNewTodo} updateFormDisplay={setFormDisplay}/>;
     
+    useEffect(() => {
+        dispatch(getTodos(1))
+    }, [dispatch]);
+
     return (
         <>
         <div className="todo-header">
@@ -32,9 +32,7 @@ export default function TodoContainer() {
         </div>
         { todoForm }
         <div className="todos-display">
-            <ul>
-                { todos }
-            </ul>
+            <DisplayTodos todos={todosArray}/>
         </div>
         </>
     )

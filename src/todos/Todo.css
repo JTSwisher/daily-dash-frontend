@@ -73,11 +73,22 @@
 }
 
 .todos-display {
-    height: 300px;
+    height: 450px;
     overflow: scroll;
     scrollbar-color: white;
 }
 
-#todo {
-    margin-bottom: 10px;
+.todo {
+    margin-bottom: 20px;
+}
+
+#todo-title {
+    margin: 0;
+    font-size: .90em;
+}
+
+#todo-created-date {
+    margin: 0;
+    font-size: .70em;
+    color: rgba(255,255,255,0.6);
 }
