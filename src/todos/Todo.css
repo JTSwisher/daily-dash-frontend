@@ -10,6 +10,7 @@
     width: 99%;
 }
 
+
 #plus-icon {
     font-size: 1.4em;
     cursor: pointer;
@@ -35,7 +36,7 @@
     background-color: rgba(255,255,255,0.2);
     border: 0.1px solid white;
     outline: 0;
-    width: 87%;
+    width: 89%;
     border-radius: 30px;
     padding: 6px 10px;
     margin: 0 auto 0 auto;
@@ -60,7 +61,7 @@
     padding: 0;
     border: none;
     width: 0;
-    margin-left: 10px;
+    margin-left: 15px;
     margin-top: 10px;
 }
 
@@ -73,10 +74,9 @@
 }
 
 .todos-display {
-    height: 450px;
+    height: 70%;
     overflow: scroll;
-    scrollbar-shadow-color: transparent;
-    scrollbar-track-color: transparent;
+    box-shadow: 0 9px 9px -6px rgba(255,255,255,0.2);
 }
 
 .todo {

@@ -25,7 +25,6 @@ export default function HomeContainer() {
                     <GoogleSearchBar />
                 </div>
             </div>
-            
         </div>
     )
 }

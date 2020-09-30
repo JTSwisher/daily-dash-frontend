@@ -8,12 +8,12 @@ export default function Clock() {
       
         return function cleanup() {
             clearInterval(timerID);
-          };
-       });
+        };
+    });
       
-        function tick() {
+    function tick() {
         setTime(new Date());
-        }
+    }
 
     return(
         <p className="time">{ time.toLocaleTimeString().toLowerCase() }</p>

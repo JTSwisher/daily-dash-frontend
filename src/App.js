@@ -6,6 +6,7 @@ import LandingContainer from './landingPage/LandingContainer'
 import Login from './authentication/Login'
 import Signup from './authentication/Signup'
 import HomeContainer from './home/HomeContainer'
+import ShowsContainer from './shows/ShowsContainer'
 
 function App() {
   let nav;
@@ -21,6 +22,7 @@ function App() {
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/>
       <Route exact path="/dash/home" component={HomeContainer}/>
+      <Route exact path="/dash/shows" component={ShowsContainer} />
     </BrowserRouter>
     </div>
   );

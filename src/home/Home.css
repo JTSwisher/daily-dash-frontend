@@ -1,11 +1,10 @@
 .home-container {
     margin-left: 10%;
-    height: 85%;
+    height: 90vh;
     width: 85%;
     margin-top: 4%;
     color: white;
     padding: 0;
-    /* border: solid 1px white; */
 }
 
 /* Home greeting styles */
@@ -52,24 +51,23 @@
 .home-content-main {
     display: flex;
     flex-direction: row;
-
+    height: 90%;
 }
 
 .content {
     width: 35%;
-    height: 60%;
+    height: 80%;
     margin-left: 4%;
     padding: 0;
     overflow: scroll;
-  
 }
 
 .google-search-container {
     position: fixed;
-    
     left: 60%;
-    width: 30%;
+    width: 35%;
 }
+
 .google-search-form {
     width: 95%;
     display: flex;

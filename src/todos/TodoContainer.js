@@ -21,7 +21,7 @@ export default function TodoContainer() {
     );
 
     let todoForm;
-    if (formDisplay) todoForm = <TodoForm  submit={saveNewTodo} updateFormDisplay={setFormDisplay}/>;
+    if (formDisplay) todoForm = <TodoForm submit={saveNewTodo} updateFormDisplay={setFormDisplay}/>;
     
     useEffect(() => {
         dispatch(getTodos(1))
@@ -29,16 +29,16 @@ export default function TodoContainer() {
 
     return (
         <>
-        <div className="todo-header">
-            <p id="header">Todos</p>
-            <BsFilePlus id="plus-icon" onClick={() => setFormDisplay(!formDisplay)} />
-            <hr id="hr"/>
-        </div>
-        { todoForm }
-        <div className="todos-display">
-            <DisplayTodos todos={ todos }/>
-        </div>
-        <BsArrowUpDown id="sort-icon" onClick={() => setDateSort(!dateSort)}/>
+            <div className="todo-header">
+                <p id="header">Todos</p>
+                <BsFilePlus id="plus-icon" onClick={() => setFormDisplay(!formDisplay)} />
+                <hr id="hr"/>
+            </div>
+            { todoForm }
+            <div className="todos-display">
+                <DisplayTodos todos={ todos }/>
+            </div>
+            <BsArrowUpDown id="sort-icon" onClick={() => setDateSort(!dateSort)}/>
         </>
     )
 }
