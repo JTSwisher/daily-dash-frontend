@@ -1,4 +1,6 @@
 import React from 'react';
+import './Shows.css'
+import ShowsForm from './ShowsForm'
 
 export default function ShowsContainer() {
 
@@ -6,7 +8,14 @@ export default function ShowsContainer() {
     //on movie click hit Utelly to find locations to watch
     return(
         <div className="shows-container">
-            hi
+            <div className="shows-header">
+                <div className="shows-header-title">
+                <p id="shows-header-title">Shows</p>
+                </div>
+                <div className="shows-header-form">
+                    <ShowsForm />
+                </div>
+            </div>
         </div>
     )
 

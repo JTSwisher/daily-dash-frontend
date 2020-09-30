@@ -1,0 +1,36 @@
+.shows-container {
+    margin-left: 10%;
+    height: 100;
+    width: 100%;
+    color: white;
+    padding: 0;
+    border: 1px solid white;
+}
+
+
+.shows-header {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    border: 1px solid white;
+}
+
+.shows-header-title {
+
+}
+
+#shows-header-title {
+    font-size: 1.5em;
+}
+
+.shows-header-form {
+
+}
+
+.shows-form{
+
+}
+
+#shows-input{
+
+}

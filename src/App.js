@@ -16,8 +16,8 @@ function App() {
  
   return (
     <div className="app">
-    { nav }
     <BrowserRouter>
+      { nav }
       <Route exact path="/" component={LandingContainer}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/>
