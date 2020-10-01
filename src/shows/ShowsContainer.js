@@ -10,7 +10,7 @@ export default function ShowsContainer() {
     useEffect(() => { //temporary for testing content for rendering and styling
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
         .then(res => res.json())
-        .then(res => setShows(res["results"]))
+        .then(res => setShows(shows.concat(res["results"])))
     }, [])
 
         
