@@ -24,7 +24,7 @@ export default function TodoContainer() {
     if (formDisplay) todoForm = <TodoForm submit={saveNewTodo} updateFormDisplay={setFormDisplay}/>;
     
     useEffect(() => {
-        dispatch(getTodos(1))
+        dispatch(getTodos(1)) // need to set user id via local storage
     }, [dispatch]);
 
     return (
