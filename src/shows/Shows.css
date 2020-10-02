@@ -17,11 +17,19 @@
 
 .shows-header-title {
     margin-top: 40px;
+    display: flex;
+}
+
+#shows-header-title-1 {
+    font-size: 1.5em;
+    margin: 0px 35px 0px 0px;
+    cursor: pointer;
 }
 
 #shows-header-title {
     font-size: 1.5em;
     margin: 0;
+    cursor: pointer;
 }
 
 .shows-header-form {

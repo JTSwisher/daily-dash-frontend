@@ -6,21 +6,22 @@ const API_KEY = process.env.REACT_APP_THE_MOVIE_DB_API_KEY
 
 export default function ShowsContainer() {
     const [shows, setShows] = useState([])
+    const [category, setCategory] = useState('movies')
     
     useEffect(() => { //temporary for testing content for rendering and styling
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=1`)
         .then(res => res.json())
         .then(res => setShows(shows.concat(res["results"])))
     }, [])
 
-        
-    
+
+
     return(
-        
         <div className="shows-page-container">
             <div className="shows-header">
                 <div className="shows-header-title">
-                <p id="shows-header-title">Shows</p>
+                    <p id="shows-header-title-1" value="movies">Movies</p>
+                    <p id="shows-header-title" value="tv">TV</p>
                 </div>
                 <div className="shows-header-form">
                     <ShowsForm />
