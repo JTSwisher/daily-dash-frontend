@@ -18,9 +18,9 @@ export default function Show(props){
                 <img  src={`https://image.tmdb.org/t/p/w200/${show.poster_path}`} alt="" id="show-details-image"/>
                 <div id="header-details">
                     <FaTimes id="show-details-exit-icon" onClick={() => handleShowDetailDisplay()}/>
-                    <p id="show-details-title">Title: {show.title}</p>
-                    <p id="show-details-rating">Rating: {show.vote_average}/10</p>
-                    <p id="show-details-date">Date: {new Date(show.release_date).toLocaleDateString()}</p>
+                    <p id="show-details-title"><strong>Title:</strong> {show.title}</p>
+                    <p id="show-details-rating"><strong>Rating:</strong> {show.vote_average}/10</p>
+                    <p id="show-details-date"><strong>Date:</strong> {new Date(show.release_date).toLocaleDateString()}</p>
                     <button id="watch-show-button">Watch Now</button>
                 </div>
             </div>

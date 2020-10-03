@@ -12,6 +12,7 @@ export default function ShowsContainer() {
     //need to handle category color change if search is used, pass calback down to form?
     //need to break out all api calls into seperate file and impot in, use switch statement to determine which one to use? seperate calls one can 
     // be shared for most popular like below passing type var. search needs seperate for either movie or tv search
+    // use encodeURIComponent('string encode') to convert string into 'string%20'
 
     //TV: https://api.themoviedb.org/3/search/tv?api_key=4668a91e8c6f6c418f6f0cd556b0e3d4&language=en-US&page=1&query=breaking%20bad&include_adult=false
     //Movie: https://api.themoviedb.org/3/search/movie?api_key=4668a91e8c6f6c418f6f0cd556b0e3d4&language=en-US&query=ava&page=1&include_adult=false
