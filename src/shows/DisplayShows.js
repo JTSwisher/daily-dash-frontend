@@ -8,7 +8,7 @@ export default function DisplayShow(props){
 
     return(
         <div className="shows-display" >
-            <div className="overlay" style={{display: (overlayDisplay ? '' : 'none')}} onClick={() => setOverlayDisplay(!overlayDisplay)}></div>
+            <div className="overlay" style={{display: (overlayDisplay ? '' : 'none')}} ></div>
             { renderShows }
         </div>
    )
