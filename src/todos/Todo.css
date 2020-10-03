@@ -47,14 +47,6 @@
     font-family: 'Nunito', sans-serif;
 }
 
-#todo-input:hover {
-    background-color: rgba(255,255,255,0.5);
-}
-
-#todo-input:focus:hover{
-    background-color: rgba(255,255,255,0.2);
-}
-
 #button-wrapper {
     position: absolute;
     background: none;
