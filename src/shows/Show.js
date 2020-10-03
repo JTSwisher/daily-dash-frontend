@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { FaTimes } from 'react-icons/fa'
-const API_KEY = process.env.REACT_APP_UTELLY_API_KEY 
+
 
 export default function Show(props){
     const [display, setDisplay] = useState(false)
@@ -10,18 +10,6 @@ export default function Show(props){
     let handleShowDetailDisplay = () => {
         setDisplay(!display);
         props.overlayCallback(!props.overlayState)
-    }
-
-    let getStreamingOptions = () => { //testing functionality for result styling and rendering
-        fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${show.title}&country=us`,{
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-                "x-rapidapi-key": `${API_KEY}`
-            }
-        })
-        .then(res => res.json())
-        .then(res => console.log(res))
     }
 
     return(
@@ -34,7 +22,10 @@ export default function Show(props){
                     <p id="show-details-title"><strong>Title:</strong> {show.title}</p>
                     <p id="show-details-rating"><strong>Rating:</strong> {show.vote_average}/10</p>
                     <p id="show-details-date"><strong>Date:</strong> {new Date(show.release_date).toLocaleDateString()}</p>
-                    <button id="watch-show-button" onClick={() => getStreamingOptions()}>Watch Now</button>
+                    <form action="http://www.google.com/search?q" method="get" target="_blank">
+                        <input type="hidden" name="q" value={show.title}/>
+                        <button id="watch-show-button" type="submit">Watch Now</button>
+                    </form>
                 </div>
             </div>
             <p id="show-details-description">{show.overview}</p>
