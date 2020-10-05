@@ -2,16 +2,15 @@ import React, {useState, useEffect} from 'react';
 import './Shows.css'
 import ShowsForm from './ShowsForm'
 import DisplayShows from './DisplayShows'
-
 import { popularMovies, popularTV } from './GetShowsUrls'
+import { FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 
 
 export default function ShowsContainer() {
     const [shows, setShows] = useState([])
     const [mainCategorySelected, setMainCategorySelected] = useState('movie')
     const [fetchUrl, setFetchUrl] = useState('movie')
-    
-    
+    const [page, setPage] = useState(1)
 
     const type = {
         "movie": popularMovies,
@@ -20,10 +19,10 @@ export default function ShowsContainer() {
     
     useEffect(() => { 
         console.log('firing')
-        fetch(type[`${fetchUrl}`]())
+        fetch(type[`${fetchUrl}`](page))
         .then(res => res.json())
         .then(res => setShows(() => [...res["results"]]))
-    }, [mainCategorySelected]);
+    }, [mainCategorySelected, page]);
 
     let handleCategoryStateChange = (c) => { 
         setShows(() => []);
@@ -48,6 +47,10 @@ export default function ShowsContainer() {
                 </div>
                 <div className="shows-header-form">
                     <ShowsForm mainCategory={mainCategorySelected} setShowState={handleFormSearchResults}/>
+                </div>
+                <div className="show-page-selector">
+                    <FaArrowLeft id="pagination-icon" style={{display:(page === 1 ? 'none' : '')}} onClick={() => setPage(page - 1)}/>
+                    <FaArrowRight id="pagination-icon" onClick={() => setPage(page + 1)}/>
                 </div>
             </div>
             <DisplayShows shows={shows} />

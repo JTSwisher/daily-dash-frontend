@@ -88,6 +88,22 @@
     color: #77A6F7;
 }
 
+.show-page-selector {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 10%;
+    margin-top: 35px;
+}
+
+#pagination-icon {
+    margin: 15px;
+    cursor: pointer;
+}
+
+#pagination-icon:hover {
+    color: #77A6F7;
+}
 /* shows display styles */
 
 .shows-container {
