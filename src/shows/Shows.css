@@ -93,12 +93,13 @@
     display: flex;
     flex-direction: row;
     right: 10%;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 
 #pagination-icon {
     margin: 15px;
     cursor: pointer;
+    font-size: 1.5em;
 }
 
 #pagination-icon:hover {

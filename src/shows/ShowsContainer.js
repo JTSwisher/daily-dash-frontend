@@ -36,7 +36,7 @@ export default function ShowsContainer() {
 
     let handleFormSearchResults = (res) => {
         setShows(() => []);
-        setShows(() => [...res["results"]])
+        setShows(() => [...res])
     }
 
     return(
@@ -47,7 +47,7 @@ export default function ShowsContainer() {
                     <p id="shows-header-title" onClick={ () => handleCategoryStateChange('tv')} style={{color: (mainCategorySelected === 'tv' ? '#77A6F7' : 'white') }}>TV</p> 
                 </div>
                 <div className="shows-header-form">
-                    <ShowsForm mainCategory={mainCategorySelected} setShowState={handleFormSearchResults}/>
+                    <ShowsForm mainCategory={mainCategorySelected} setShowState={handleFormSearchResults} />
                 </div>
                 <div className="show-page-selector" style={{display: (shows.length <= 15 ? 'none' : '')}}>
                     <FaArrowLeft id="pagination-icon" style={{display:(page === 1 ? 'none' : '')}} onClick={() => setPage(page - 1)}/>

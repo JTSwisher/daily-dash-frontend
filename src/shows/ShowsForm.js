@@ -19,13 +19,13 @@ export default function ShowsForm(props) {
         e.preventDefault();
         fetch(type[`${fetchUrl}`](encodeURIComponent(query)))
         .then(res => res.json())
-        .then(res => props.setShowState(res))
+        .then(res => props.setShowState(res["results"].slice(0, 15)))
         .then(setQuery(''))
     }
 
     return(
         <form className="shows-form" onSubmit={e => handleFormSubmit(e)}>
-            <input id="shows-input" value={query} onChange={e => setQuery(e.target.value)}></input>
+            <input id="shows-input" value={query} onChange={e => setQuery(e.target.value)} required></input>
             <button type="submit" id="shows-button-wrapper"><FaSearch id="shows-form-submit-icon" /></button>
         </form>
     )
