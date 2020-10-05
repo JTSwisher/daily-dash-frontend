@@ -24,12 +24,14 @@
     font-size: 1.5em;
     margin: 0px 35px 0px 0px;
     cursor: pointer;
+    letter-spacing: 3px;
 }
 
 #shows-header-title {
     font-size: 1.5em;
     margin: 0;
     cursor: pointer;
+    letter-spacing: 2px;
 }
 
 .shows-header-form {
@@ -88,7 +90,7 @@
     color: #77A6F7;
 }
 
-.show-page-selector {
+.shows-page-selector {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -150,9 +152,9 @@
 }
 
 #show-image {
+    margin-top: 5px;
     width: 200px;
     height: 300px;
-
     cursor: pointer;
 }
 

@@ -18,7 +18,6 @@ export default function ShowsContainer() {
     }
     
     useEffect(() => { 
-        console.log('firing')
         fetch(type[`${fetchUrl}`](page))
         .then(res => res.json())
         .then(res => setShows(() => [...res["results"]]))
@@ -49,7 +48,7 @@ export default function ShowsContainer() {
                 <div className="shows-header-form">
                     <ShowsForm mainCategory={mainCategorySelected} setShowState={handleFormSearchResults} />
                 </div>
-                <div className="show-page-selector" style={{display: (shows.length <= 15 ? 'none' : '')}}>
+                <div className="shows-page-selector" style={{display: (shows.length <= 15 ? 'none' : '')}}>
                     <FaArrowLeft id="pagination-icon" style={{display:(page === 1 ? 'none' : '')}} onClick={() => setPage(page - 1)}/>
                     <FaArrowRight id="pagination-icon" onClick={() => setPage(page + 1)}/>
                 </div>
