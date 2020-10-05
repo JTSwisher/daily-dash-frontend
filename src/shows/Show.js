@@ -32,7 +32,7 @@ export default function Show(props){
             <p id="show-details-description">{show.overview}</p>
         </div>
         <div className="show">
-            <p id="show-title">{name}</p>
+            <p id="show-title">{(name.length >= 20) ? `${name.slice(0,20)}...` : name }</p>
             <img src={`https://image.tmdb.org/t/p/w200/${show.poster_path}`} alt="" id="show-image" onClick={() => handleShowDetailDisplay()}/>
         </div>
         </>
