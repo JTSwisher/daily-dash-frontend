@@ -1,18 +1,26 @@
 import  React, {useState, useEffect} from 'react'
 import { FaSearch } from 'react-icons/fa'
+import { tvSearch, movieSearch } from './GetShows'
 
 export default function ShowsForm(props) {
     const [query, setQuery] = useState('')
-    const [type, setType] = useState('')
+    const [category, setCategory] = useState('')
+
+    const type = {
+        "tvSearch": tvSearch,
+        "movieSearch": movieSearch
+    }
 
     useEffect(() => {
-        props.category === 'movie' ? setType("movieSearch") : setType("tvSearch")
+        props.category === 'movie' ? setCategory("movieSearch") : setCategory("tvSearch")
     }, [props.category])
     
     let handleFormSubmit = e => {
-        e.preventDefault()
-        props.search(type, query)
-        setQuery('')
+        e.preventDefault();
+        fetch(type[`${category}`](encodeURIComponent(query)))
+        .then(res => res.json())
+        .then(res => props.search(res))
+        .then(setQuery(''))
     }
 
     return(
@@ -21,5 +29,4 @@ export default function ShowsForm(props) {
             <button type="submit" id="shows-button-wrapper"><FaSearch id="shows-form-submit-icon" /></button>
         </form>
     )
-
 }
