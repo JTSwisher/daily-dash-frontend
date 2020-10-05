@@ -26,6 +26,7 @@ export default function ShowsContainer() {
 
     let handleCategoryStateChange = (c) => { 
         setShows(() => []);
+        setPage(1)
         setFetchUrl(c);
         setMainCategorySelected('');
         setTimeout(() => {
@@ -48,7 +49,7 @@ export default function ShowsContainer() {
                 <div className="shows-header-form">
                     <ShowsForm mainCategory={mainCategorySelected} setShowState={handleFormSearchResults}/>
                 </div>
-                <div className="show-page-selector">
+                <div className="show-page-selector" style={{display: (shows.length <= 15 ? 'none' : '')}}>
                     <FaArrowLeft id="pagination-icon" style={{display:(page === 1 ? 'none' : '')}} onClick={() => setPage(page - 1)}/>
                     <FaArrowRight id="pagination-icon" onClick={() => setPage(page + 1)}/>
                 </div>
