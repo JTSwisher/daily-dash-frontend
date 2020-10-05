@@ -3,13 +3,13 @@ import './Shows.css'
 import ShowsForm from './ShowsForm'
 import DisplayShows from './DisplayShows'
 
-import { popularMovies, popularTV } from './GetShows'
+import { popularMovies, popularTV } from './GetShowsUrls'
 
 
 export default function ShowsContainer() {
     const [shows, setShows] = useState([])
-    const [categorySelected, setCategorySelected] = useState('movie')
-    const [url, setUrl] = useState('movie')
+    const [mainCategorySelected, setMainCategorySelected] = useState('movie')
+    const [fetchUrl, setFetchUrl] = useState('movie')
     
 
     const type = {
@@ -19,21 +19,21 @@ export default function ShowsContainer() {
     
     useEffect(() => { 
         console.log('firing')
-        fetch(type[`${url}`]())
+        fetch(type[`${fetchUrl}`]())
         .then(res => res.json())
         .then(res => setShows(() => [...res["results"]]))
-    }, [categorySelected]);
+    }, [mainCategorySelected]);
 
-    let categoryState = (c) => { 
+    let handleCategoryStateChange = (c) => { 
         setShows(() => []);
-        setUrl(c);
-        setCategorySelected('');
+        setFetchUrl(c);
+        setMainCategorySelected('');
         setTimeout(() => {
-            setCategorySelected(c)
+            setMainCategorySelected(c)
         }, 100);
     }
 
-    let handleSearch = (res) => {
+    let handleFormSearchResults = (res) => {
         setShows(() => []);
         setShows(() => [...res["results"]])
     }
@@ -42,11 +42,11 @@ export default function ShowsContainer() {
         <div className="shows-page-container">
             <div className="shows-header">
                 <div className="shows-header-title">
-                    <p id="shows-header-title-1" onClick={ () => categoryState('movie')} style={{color: (categorySelected === 'movie' ? '#77A6F7' : 'white') }}>Movies</p> 
-                    <p id="shows-header-title" onClick={ () => categoryState('tv')} style={{color: (categorySelected === 'tv' ? '#77A6F7' : 'white') }}>TV</p> 
+                    <p id="shows-header-title-1" onClick={ () => handleCategoryStateChange('movie')} style={{color: (mainCategorySelected === 'movie' ? '#77A6F7' : 'white') }}>Movies</p> 
+                    <p id="shows-header-title" onClick={ () => handleCategoryStateChange('tv')} style={{color: (mainCategorySelected === 'tv' ? '#77A6F7' : 'white') }}>TV</p> 
                 </div>
                 <div className="shows-header-form">
-                    <ShowsForm category={categorySelected} search={handleSearch}/>
+                    <ShowsForm mainCategory={mainCategorySelected} setShowState={handleFormSearchResults}/>
                 </div>
             </div>
             <DisplayShows shows={shows} />

@@ -1,10 +1,10 @@
 import  React, {useState, useEffect} from 'react'
 import { FaSearch } from 'react-icons/fa'
-import { tvSearch, movieSearch } from './GetShows'
+import { tvSearch, movieSearch } from './GetShowsUrls'
 
 export default function ShowsForm(props) {
     const [query, setQuery] = useState('')
-    const [category, setCategory] = useState('')
+    const [fetchUrl, setFetchUrl] = useState('')
 
     const type = {
         "tvSearch": tvSearch,
@@ -12,14 +12,14 @@ export default function ShowsForm(props) {
     }
 
     useEffect(() => {
-        props.category === 'movie' ? setCategory("movieSearch") : setCategory("tvSearch")
-    }, [props.category])
+        props.mainCategory === 'movie' ? setFetchUrl("movieSearch") : setFetchUrl("tvSearch")
+    }, [props.mainCategory])
     
     let handleFormSubmit = e => {
         e.preventDefault();
-        fetch(type[`${category}`](encodeURIComponent(query)))
+        fetch(type[`${fetchUrl}`](encodeURIComponent(query)))
         .then(res => res.json())
-        .then(res => props.search(res))
+        .then(res => props.setShowState(res))
         .then(setQuery(''))
     }
 
