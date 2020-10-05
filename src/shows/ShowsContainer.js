@@ -11,6 +11,7 @@ export default function ShowsContainer() {
     const [mainCategorySelected, setMainCategorySelected] = useState('movie')
     const [fetchUrl, setFetchUrl] = useState('movie')
     
+    
 
     const type = {
         "movie": popularMovies,
