@@ -3,15 +3,17 @@ import './Weather.css'
 import WeatherForm from './WeatherForm'
 
 export default function WeatherContainer() {
-    const [location, setLocation] = useState(false)
+    const [isLocationGiven, setIsLocationGiven] = useState(false)
 
     let handleLocationFormSubmit = (z) => {
-        setLocation(!location)
+        setIsLocationGiven(!isLocationGiven)
     }
+
+    
 
     return(
         <div className="weather-container">
-            <WeatherForm location={location} updateLocationState={handleLocationFormSubmit}/>
+            <WeatherForm location={isLocationGiven} updateLocationState={handleLocationFormSubmit}/>
         </div>
     )
 }

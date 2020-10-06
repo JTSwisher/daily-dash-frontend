@@ -12,11 +12,11 @@ export default function WeatherForm(props) {
 
     return(
         <div className="weather-form" style={{display: (props.location ? 'none' : '')}}>
-           <p><em>Enter zipcode for location current weather data</em></p>
             <form id="weather-form" onSubmit={(e) => handleFormSubmit(e)}>
                 <input id="weather-input" value={zipcode} onChange={(e) => setZipcode(e.target.value)} placeholder="Zipcode..." required></input>
                 <button type="submit" id="weather-button-wrapper"><FaSearch id="shows-form-submit-icon" /></button>
             </form>
+            <p id="weather-prompt"><em>Enter zipcode for current weather data</em></p>
         </div>
     )
 }
