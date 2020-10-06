@@ -5,6 +5,7 @@ import CurrentDate from './CurrentDate'
 import HomeMenuIcons from './HomeMenuIcons'
 import TodoContainer from '../todos/TodoContainer'
 import GoogleSearchBar from './GoogleSearchBar'
+import WeatherContainer from '../weather/WeatherContainer'
 
 export default function HomeContainer() {
     return(
@@ -21,8 +22,11 @@ export default function HomeContainer() {
                 <div className="content">
                     <TodoContainer />
                 </div>
-                <div className="google-search-container">
+                <div className="google-search">
                     <GoogleSearchBar />
+                </div>
+                <div className="weather">
+                    <WeatherContainer />
                 </div>
             </div>
         </div>

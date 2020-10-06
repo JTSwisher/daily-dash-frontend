@@ -62,10 +62,10 @@
     overflow: scroll;
 }
 
-.google-search-container {
+.google-search {
     position: fixed;
-    left: 60%;
-    width: 35%;
+    left: 55%;
+    width: 40%;
 }
 
 .google-search-form {
@@ -95,11 +95,20 @@
     padding: 0;
     border: none;
     width: 0;
-    margin-left: 13px;
-    margin-top: 10px;
+    margin: 10px 0px 0px 13px;
     right: 3.5%;
 }
 
 #google-search-icon:hover {
     color: #77A6F7;
+}
+
+.weather {
+    display: flex;
+    border: 1px solid white;
+    position: fixed;
+    width: 45%;
+    height: 200px;
+    left: 50%;
+    top: 50px;
 }
