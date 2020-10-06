@@ -9,6 +9,8 @@ export default function WeatherContainer() {
     const [locationKey, setLocationKey] = useState('')
     const [locationName, setLocationName] = useState('')
     const [zipcode, setZipcode] = useState('')
+    const [currentTemperature, setCurrentTemperature] = useState([])
+    const [dailyForecast, setDailyForecast] = useState([])
 
     let handleLocationFormSubmit = (z) => {
         setIsLocationGiven(!isLocationGiven)
@@ -34,10 +36,15 @@ export default function WeatherContainer() {
         if (locationKey.length === 0) return
         fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${API_KEY}`)
         .then(res => res.json())
-        .then(res => console.log(res.DailyForecasts))
+        .then(res => setDailyForecast(() => [...res.DailyForecasts]))
     }, [locationKey])
 
-
+    useEffect(() => {
+        if (locationKey.length === 0) return
+        fetch(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${API_KEY}`)
+        .then(res => res.json())
+        .then(res => setCurrentTemperature(() => [...res]))
+    }, [locationKey])
 
     return(
         <div className="weather-container">
