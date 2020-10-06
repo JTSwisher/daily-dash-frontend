@@ -1,0 +1,46 @@
+.weather-container {
+    width: 100%;
+}
+
+.weather-form{
+    position: relative;
+    width: 60%;
+    top: 15%;
+    left: 20%;
+    padding: 0;
+    text-align: center;
+}
+
+#weather-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 0;
+}
+
+#weather-input{
+    appearance: none;
+    background-color: rgba(255,255,255,0.2);
+    border: 0.1px solid white;
+    outline: 0;
+    width: 85%;
+    left: 0;
+    border-radius: 30px;
+    padding: 6px 10px;
+    margin: 0 auto 0 auto;
+    font-size: 1em;
+    transition-duration: 0.25s;
+    font-weight: 300;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+#weather-button-wrapper {
+    position: absolute;
+    background: none;
+    padding: 0;
+    border: none;
+    width: 0;
+    margin: 10px 0px 0px 13px;
+    right: 2.5%;
+}

@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
+import './Weather.css'
 import WeatherForm from './WeatherForm'
 
 export default function WeatherContainer() {
     const [location, setLocation] = useState(false)
 
     let handleLocationFormSubmit = (z) => {
-        setLocation(z)
+        setLocation(!location)
     }
 
     return(
