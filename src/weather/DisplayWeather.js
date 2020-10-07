@@ -5,7 +5,6 @@ export default function DisplayWeather(props) {
     const [weatherIconKey, setWeatherIconKey] = useState('')
     const { current, icon, forecastMinimum, forecastMaximum, location } = props
   
-    
     useEffect(() => {
         if (icon <= 5 || icon == 30) setWeatherIconKey('sunny')
         if (icon >= 6 && icon <= 11) setWeatherIconKey('cloudy')
@@ -16,9 +15,9 @@ export default function DisplayWeather(props) {
         if (icon>= 39 && icon <= 44) setWeatherIconKey('rainyNight')
     }, [props])
     
-    let iconImage = weatherIcons[weatherIconKey]
-    let minTemp =  !!forecastMinimum ? <p>min:{forecastMinimum}</p> : <p></p>
-    let maxTemp =  !!forecastMinimum ? <p>min:{forecastMaximum}</p> : <p></p>
+    let iconImage = weatherIcons[weatherIconKey];
+    let minTemp =  !!forecastMinimum ? <p>min:{forecastMinimum}</p> : null;
+    let maxTemp =  !!forecastMaximum ? <p>max:{forecastMaximum}</p> : null;
    
     return (
         <div className="weather-display">

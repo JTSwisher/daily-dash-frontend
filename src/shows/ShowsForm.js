@@ -25,7 +25,7 @@ export default function ShowsForm(props) {
 
     return(
         <form className="shows-form" onSubmit={e => handleFormSubmit(e)}>
-            <input id="shows-input" value={query} onChange={e => setQuery(e.target.value)} required></input>
+            <input id="shows-input" value={query} onChange={e => setQuery(e.target.value)} placeholder={(props.mainCategory === 'movie' ? 'Search Movies..' : 'Search TV..')} required></input>
             <button type="submit" id="shows-button-wrapper"><FaSearch id="shows-form-submit-icon" /></button>
         </form>
     )
