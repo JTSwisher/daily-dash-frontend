@@ -16,9 +16,10 @@ export default function DisplayWeather(props) {
     }, [props])
     
     let iconImage = weatherIcons[weatherIconKey];
-    let minTemp =  !!forecastMinimum ? <p id="min-temp">min: {forecastMinimum}</p> : null;
-    let maxTemp =  !!forecastMaximum ? <p id="max-temp">max: {forecastMaximum}</p> : null;
+    let minTemp =  !!forecastMinimum ? <p id="min-temp">min: {forecastMinimum}<sup>o</sup></p> : null;
+    let maxTemp =  !!forecastMaximum ? <p id="max-temp">max: {forecastMaximum}<sup>o</sup></p> : null;
     let currentTemp = !!current ? <p id="current-weather">{current}<sup>o</sup> F</p> : null;
+    
     return (
         <div className="weather-display">
             <div id="weather-heading">
