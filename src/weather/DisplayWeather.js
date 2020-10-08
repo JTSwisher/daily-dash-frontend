@@ -16,16 +16,18 @@ export default function DisplayWeather(props) {
     }, [props])
     
     let iconImage = weatherIcons[weatherIconKey];
-    let minTemp =  !!forecastMinimum ? <p>min:{forecastMinimum}</p> : null;
-    let maxTemp =  !!forecastMaximum ? <p>max:{forecastMaximum}</p> : null;
-   
+    let minTemp =  !!forecastMinimum ? <p id="min-temp">min: {forecastMinimum}</p> : null;
+    let maxTemp =  !!forecastMaximum ? <p id="max-temp">max: {forecastMaximum}</p> : null;
+    let currentTemp = !!current ? <p id="current-weather">{current}<sup>o</sup> F</p> : null;
     return (
         <div className="weather-display">
-            <p>{location}</p>
-            <p>{current}</p>
-            {iconImage}
-            <p>{minTemp}</p>
-            <p>{maxTemp}</p>
+            <div id="weather-heading">
+                {iconImage}
+                {currentTemp}
+            </div>
+            <p id="location-name">{location}</p>
+            {minTemp}
+            {maxTemp}
         </div>
     )
 }

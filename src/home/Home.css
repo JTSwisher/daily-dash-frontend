@@ -105,7 +105,6 @@
 
 .weather {
     display: flex;
-    border: 1px solid white;
     position: fixed;
     width: 45%;
     height: 200px;

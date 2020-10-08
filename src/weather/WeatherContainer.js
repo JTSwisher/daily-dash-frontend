@@ -27,7 +27,6 @@ export default function WeatherContainer() {
             } else {
                 window.alert(`No weather data found for zipcode (${zipcode}), please try again.`)
             }
-            console.log(locationKey)
         })
     }, [isLocationGiven])
 
@@ -52,7 +51,6 @@ export default function WeatherContainer() {
         fetch(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${API_KEY}`)
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             setCurrentTemperature(() => res[0].Temperature.Imperial.Value)
             setWeatherIcon(() => res[0].WeatherIcon)
         })
