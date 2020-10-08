@@ -23,7 +23,7 @@ export default function WeatherContainer() {
             setLocationKey(localStorage.getItem('weatherKey')) 
             setLocationName(localStorage.getItem('locationName'))
         }
-    }, [localStorage.getItem('weatherKey'), locationKey])
+    }, [locationKey])
 
 
     useEffect(() => {
@@ -71,7 +71,7 @@ export default function WeatherContainer() {
 
     return(
         <div className="weather-container">
-            <WeatherForm location={isLocationGiven} locationStorage={locationKey} updateLocationState={handleLocationFormSubmit} display={isFormDisplay} updateDisplay={setIsFormDisplay}/>
+            <WeatherForm location={isLocationGiven} updateLocationState={handleLocationFormSubmit} display={isFormDisplay} updateDisplay={setIsFormDisplay}/>
             <DisplayWeather current={currentTemperature} icon={weatherIcon} forecastMinimum={dailyForecastMinimum} forecastMaximum={dailyForecastMaximum} location={locationName}/>
         </div>
     )
