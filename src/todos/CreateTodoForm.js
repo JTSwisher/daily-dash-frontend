@@ -4,9 +4,10 @@ import { BsPlusCircle } from 'react-icons/bs'
 
 class TodoFrom extends Component {
 
+
     state = {
         body: '', 
-        user_id: 1
+        user_id: localStorage.getItem('userId')
     }
     
     handleChange = (e) => {
@@ -20,7 +21,7 @@ class TodoFrom extends Component {
         e.preventDefault();
         this.props.submit(this.state)
         this.props.updateFormDisplay(false)
-        this.setState({body: '', user_id: 1})
+        this.setState({body: '', user_id: ''})
     }
 
     render(){
