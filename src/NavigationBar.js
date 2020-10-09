@@ -2,10 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 import { BiHomeHeart} from 'react-icons/bi'
-import { FaRegSun } from 'react-icons/fa'
+import { ImExit } from 'react-icons/im'
 import { FaFilm } from 'react-icons/fa'
 import { FaRegNewspaper } from 'react-icons/fa'
-import { FaHackerNewsSquare } from 'react-icons/fa'
 
 
 export default function NavigationBar() {
@@ -14,12 +13,17 @@ export default function NavigationBar() {
             <Link to="/dash/home">
                 <BiHomeHeart className="nav-icons" id="home"/>
             </Link>
-            <Link to="/dash/shows">
-                <FaFilm className="nav-icons" id="movies"  />
+            <div id="navbar-sub">
+                <Link to="/dash/shows">
+                    <FaFilm className="nav-icons" id="movies"  />
+                </Link>
+                <Link to="/dash/news">
+                    <FaRegNewspaper className="nav-icons" id="news" />
+                </Link>
+            </div>
+            <Link to="/signout">
+                <ImExit className="nav-icons" id="exit" />
             </Link>
-            <FaRegNewspaper className="nav-icons" id="news" />
-            <FaHackerNewsSquare className="nav-icons" id="hacker-news" />
-            <FaRegSun className="nav-icons" id="settings" />
         </div>
     )
 }

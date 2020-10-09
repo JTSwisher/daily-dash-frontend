@@ -18,14 +18,13 @@ export default function WeatherContainer() {
     }
 
     useEffect(() => {
-        if (locationKey > 0 ) return
         if (!!localStorage.getItem('weatherKey')) {
             setLocationKey(localStorage.getItem('weatherKey')) 
             setLocationName(localStorage.getItem('locationName'))
         }
     }, [locationKey])
 
-
+    // unique location key fetch
     useEffect(() => {
         if (isLocationGiven === false) return
         fetch(`http://dataservice.accuweather.com/locations/v1/postalcodes/US/search?apikey=${API_KEY}&q=${zipcode}`)
@@ -42,7 +41,7 @@ export default function WeatherContainer() {
         })
     }, [isLocationGiven])
 
-    // daily temperature forecast
+    // daily temperature forecast fetch
     const [dailyForecastMinimum, setDailyForecastMinimum] = useState()
     const [dailyForecastMaximum, setDailyForecastMaximum] = useState()
     useEffect(() => { 
@@ -56,23 +55,23 @@ export default function WeatherContainer() {
         })
     }, [locationKey])
 
-    // current temperature
+    // current temperature fetch
     const [currentTemperature, setCurrentTemperature] = useState('')
-    const [weatherIcon, setWeatherIcon] = useState()
+    const [weatherIconValue, setWeatherIconValue] = useState()
     useEffect(() => { 
         if (locationKey.length === 0) return
         fetch(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${API_KEY}`)
         .then(res => res.json())
         .then(res => {
             setCurrentTemperature(() => res[0].Temperature.Imperial.Value)
-            setWeatherIcon(() => res[0].WeatherIcon)
+            setWeatherIconValue(() => res[0].WeatherIcon)
         })
     }, [locationKey])
 
     return(
         <div className="weather-container">
             <WeatherForm location={isLocationGiven} updateLocationState={handleLocationFormSubmit} display={isFormDisplay} updateDisplay={setIsFormDisplay}/>
-            <DisplayWeather current={currentTemperature} icon={weatherIcon} forecastMinimum={dailyForecastMinimum} forecastMaximum={dailyForecastMaximum} location={locationName}/>
+            <DisplayWeather current={currentTemperature} icon={weatherIconValue} forecastMinimum={dailyForecastMinimum} forecastMaximum={dailyForecastMaximum} location={locationName}/>
         </div>
     )
 }

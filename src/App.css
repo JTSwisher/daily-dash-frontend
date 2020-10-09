@@ -11,6 +11,12 @@
     text-align: center;
 }
 
+#navbar-sub {
+    position: fixed;
+    top: 40%;
+    text-align: center;
+}
+
 .nav-icons {
     position: fixed;
     color: white;
@@ -23,22 +29,19 @@
 }
 
 #home {
-    margin-top: 20px;
+    top: 20px;
 }
 
 #movies {
-    margin-top: 300px;
+    margin-left: 20px;
 }
 
 #news {
-    margin-top: 380px;
+    margin-top: 100px;
+    margin-left: 20px;
 }
 
-#hacker-news {
-    margin-top: 460px;
-}
-
-#settings {
+#exit {
     bottom: 20px;
 }
 
