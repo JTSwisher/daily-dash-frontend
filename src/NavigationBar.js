@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import history from './History'
 import { BiHomeHeart} from 'react-icons/bi'
 import { ImExit } from 'react-icons/im'
 import { FaFilm } from 'react-icons/fa'
@@ -8,6 +8,12 @@ import { FaRegNewspaper } from 'react-icons/fa'
 
 
 export default function NavigationBar() {
+
+    let handleUserLogout = (e) => {
+        localStorage.clear()
+        history.push("/")
+    }
+
     return(
         <div className="navBar">
             <Link to="/dash/home">
@@ -21,9 +27,7 @@ export default function NavigationBar() {
                     <FaRegNewspaper className="nav-icons" id="news" />
                 </Link>
             </div>
-            <Link to="/signout">
-                <ImExit className="nav-icons" id="exit" />
-            </Link>
+            <ImExit className="nav-icons" id="exit" onClick={(e) => handleUserLogout(e)}/>
         </div>
     )
 }
