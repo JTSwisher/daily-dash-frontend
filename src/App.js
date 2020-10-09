@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
+import history from './History'
 import './App.css'
 import NavigationBar from './NavigationBar'
 import LandingContainer from './landingPage/LandingContainer'
@@ -16,14 +17,14 @@ function App() {
  
   return (
     <div className="app">
-    <BrowserRouter>
+    <Router history={history}>
       { nav }
       <Route exact path="/" component={LandingContainer}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/>
       <Route exact path="/dash/home" component={HomeContainer}/>
       <Route exact path="/dash/shows" component={ShowsContainer} />
-    </BrowserRouter>
+    </Router>
     </div>
   );
 }
