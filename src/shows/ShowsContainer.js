@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './Shows.css'
+import NavigationBar from '../NavigationBar'
 import ShowsForm from './ShowsForm'
 import DisplayShows from './DisplayShows'
 import { popularMovies, popularTV } from './GetShowsUrls'
@@ -39,6 +40,8 @@ export default function ShowsContainer() {
     }
 
     return(
+        <>
+        <NavigationBar />
         <div className="shows-page-container">
             <div className="shows-header">
                 <div className="shows-header-title">
@@ -55,6 +58,7 @@ export default function ShowsContainer() {
             </div>
             <DisplayShows shows={shows} />
         </div>
+        </>
     )
 
 }

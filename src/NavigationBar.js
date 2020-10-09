@@ -15,7 +15,7 @@ export default function NavigationBar() {
     }
 
     return(
-        <div className="navBar">
+        <div className="navBar" >
             <Link to="/dash/home">
                 <BiHomeHeart className="nav-icons" id="home"/>
             </Link>
@@ -27,7 +27,7 @@ export default function NavigationBar() {
                     <FaRegNewspaper className="nav-icons" id="news" />
                 </Link>
             </div>
-            <ImExit className="nav-icons" id="exit" onClick={(e) => handleUserLogout(e)}/>
+            <ImExit className="nav-icons" id="exit" onClick={handleUserLogout}/>
         </div>
     )
 }

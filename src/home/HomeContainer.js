@@ -6,9 +6,12 @@ import HomeMenuIcons from './HomeMenuIcons'
 import TodoContainer from '../todos/TodoContainer'
 import GoogleSearchBar from './GoogleSearchBar'
 import WeatherContainer from '../weather/WeatherContainer'
+import NavigationBar from '../NavigationBar'
 
 export default function HomeContainer() {
     return(
+        <>
+        <NavigationBar />
         <div className="home-container">
             <div className="home-greeting">
                 <p id="greeting">Welcome Jeff</p>
@@ -30,5 +33,6 @@ export default function HomeContainer() {
                 </div>
             </div>
         </div>
+        </>
     )
 }
