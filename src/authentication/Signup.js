@@ -3,7 +3,7 @@ import AuthForm from './AuthForm'
 import history from '../History'
 import './Auth.css'
 
-const submitUser = user => { //temp will be handled by redux dispatch
+const submitUser = user => {
     fetch("http://localhost:3001/api/v1/users", {
         method: "POST",
         headers: {
@@ -17,7 +17,7 @@ const submitUser = user => { //temp will be handled by redux dispatch
         if (user.error) {
             window.alert(user.error)
         } else {
-            console.log(user)
+            localStorage.setItem('token', user.token)
             localStorage.setItem('userId', user.user.id )
             localStorage.setItem('name', user.user.name)
             history.push("/dash/home")
