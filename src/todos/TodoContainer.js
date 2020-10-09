@@ -15,7 +15,7 @@ export default function TodoContainer() {
     const sortedNewestFirstTodos = [...todosArray].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
     let todos = dateSort ? sortedNewestFirstTodos : todosArray;
 
-    let userId = localStorage.getItem('userId')
+    let currentUserId = localStorage.getItem('userId')
 
     const saveNewTodo = useCallback(
         (todo) => dispatch(createTodo(todo)),
@@ -26,8 +26,8 @@ export default function TodoContainer() {
     if (formDisplay) todoForm = <TodoForm submit={saveNewTodo} updateFormDisplay={setFormDisplay}/>;
     
     useEffect(() => {
-        dispatch(getTodos(userId)) 
-    }, [dispatch, userId]);
+        dispatch(getTodos(currentUserId)) 
+    }, [dispatch, currentUserId]);
 
     return (
         <>

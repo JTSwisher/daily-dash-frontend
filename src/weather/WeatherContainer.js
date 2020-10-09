@@ -39,7 +39,7 @@ export default function WeatherContainer() {
                 window.alert(`No weather data found for zipcode (${zipcode}), please try again.`)
             }
         })
-    }, [isLocationGiven])
+    }, [isLocationGiven, zipcode])
 
     // daily temperature forecast fetch
     const [dailyForecastMinimum, setDailyForecastMinimum] = useState()
@@ -49,7 +49,6 @@ export default function WeatherContainer() {
         fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${API_KEY}`)
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             setDailyForecastMinimum(() => res.DailyForecasts[0].Temperature.Minimum.Value)
             setDailyForecastMaximum(() => res.DailyForecasts[0].Temperature.Maximum.Value)
         })
