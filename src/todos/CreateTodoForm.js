@@ -3,8 +3,6 @@ import './Todo.css'
 import { BsPlusCircle } from 'react-icons/bs'
 
 class TodoFrom extends Component {
-
-
     state = {
         body: '', 
         user_id: localStorage.getItem('userId')

@@ -2,6 +2,8 @@ import React from 'react'
 import { FaCheck } from 'react-icons/fa'
 
 export default function Todo(props) {
+
+    // add event handler to delete todo after completion
     return (
         <li className="todo" >
             <FaCheck id="todo-complete-icon"/>

@@ -10,7 +10,6 @@ export default function RedditForm(props) {
         props.updateFormDisplay(false)
     }
 
-
     return (
         <div className="reddit-form-container">
             <form id="reddit-form" onSubmit={(e) => handleFormSubmit(e)}>
