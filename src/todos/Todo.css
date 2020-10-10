@@ -66,14 +66,13 @@
 }
 
 .todos-display {
-    height: 70%;
+    height: 75%;
     overflow: scroll;
     box-shadow: 0 9px 9px -6px rgba(255,255,255,0.2);
 }
 
 .todo {
     margin-bottom: 20px;
-    
 }
 
 #todo-title {

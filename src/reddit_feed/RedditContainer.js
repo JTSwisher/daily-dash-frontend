@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Reddit.css'
 import RedditForm from './RedditForm'
+import DisplayRedditResults from './DisplayRedditResults'
 import { FiSearch } from 'react-icons/fi'
 
 export default function RedditContainer() {
@@ -16,27 +17,25 @@ export default function RedditContainer() {
         fetch(`https://www.reddit.com/r/${subredditValue}.json`)
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             setSubRedditResults(res.data.children)
         })
 
     }, [subredditValue])
 
-    //create useEffect to fetch reddit data
-    //pass data into display data component which passes into data compoennet
-    //url and title for result render
-
     let redditForm;
     if (isFormDisplay) redditForm = <RedditForm search={searchReddit} updateFormDisplay={setIsFormDisplay}/>;
 
     return(
-        <div>
+       <>
             <div className="reddit-header">
-                <p id="header">Reddit - { subredditValue }</p>
+                <p id="header">Subreddit - { subredditValue }</p>
                 <FiSearch id="search-icon" onClick={() => setIsFormDisplay(!isFormDisplay)}/>
                 <hr id="hr"/>
             </div>
             { redditForm }
-        </div>
+            <div className="reddit-display">
+                <DisplayRedditResults results={subRedditResults} />
+            </div>
+        </>
     )
 }

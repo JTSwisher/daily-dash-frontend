@@ -21,3 +21,52 @@
 #search-icon:hover {
     color: #77A6F7;
 }
+
+.reddit-form-container {
+    margin-top: 15px;
+    padding: 0;
+}
+
+#reddit-form{
+    padding: 0;
+}
+
+#reddit-input {
+    appearance: none;
+    background-color: rgba(255,255,255,0.2);
+    border: 0.1px solid white;
+    outline: 0;
+    width: 89%;
+    border-radius: 30px;
+    padding: 6px 10px;
+    margin: 0 auto 0 auto;
+    font-size: 1em;
+    transition-duration: 0.25s;
+    font-weight: 300;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.reddit-display {
+    height: 75%;
+    overflow: scroll;
+    box-shadow: 0 9px 9px -6px rgba(255,255,255,0.2);
+}
+
+.result {
+    margin-bottom : 20px;
+}
+
+#result {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: .90em;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+#result:hover {
+    color: #77A6F7;
+}
