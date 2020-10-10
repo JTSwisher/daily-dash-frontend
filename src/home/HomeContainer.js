@@ -17,7 +17,11 @@ export default function HomeContainer() {
     
     useEffect(() => {
         mainContentIdentifier === 'todos' ? setMainContent(<TodoContainer />) : setMainContent(<RedditContainer />)
-    }, [])
+    }, [mainContentIdentifier])
+
+    const setMainContentIdentifierCallback = (value) => {
+        setMainContentidentifier(value)
+    }
 
     return(
         <>
@@ -29,7 +33,7 @@ export default function HomeContainer() {
                 <CurrentDate />
             </div>
             <div className="menu">
-                <HomeMenuIcons />
+                <HomeMenuIcons setMain={setMainContentIdentifierCallback} />
             </div>
             <div className="home-content-main">
                 <div className="content">
