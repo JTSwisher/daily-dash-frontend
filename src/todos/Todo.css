@@ -1,6 +1,7 @@
 .todo-header {
     margin-top: 10px;
 }
+
 #header {
     display: inline;
 }
@@ -9,7 +10,6 @@
     margin: 0;
     width: 99%;
 }
-
 
 #plus-icon {
     font-size: 1.4em;

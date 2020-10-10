@@ -11,9 +11,9 @@ export default function TodoContainer() {
     const [dateSort, setDateSort] = useState(false)
     const dispatch = useDispatch()
 
-    const todosArray = useSelector(state => state.todo.todos)
-    const sortedNewestFirstTodos = [...todosArray].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-    let todos = dateSort ? sortedNewestFirstTodos : todosArray;
+    const unsortedTodos = useSelector(state => state.todo.todos)
+    const sortedNewestFirstTodos = [...unsortedTodos].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    let todos = dateSort ? sortedNewestFirstTodos : unsortedTodos;
 
     let currentUserId = localStorage.getItem('userId')
 
