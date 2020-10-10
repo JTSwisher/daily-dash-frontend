@@ -7,7 +7,7 @@ import TodoForm from './CreateTodoForm'
 import DisplayTodos from './DisplayTodos'
 
 export default function TodoContainer() {
-    const [formDisplay, setFormDisplay] = useState(false)
+    const [isFormDisplay, setIsFormDisplay] = useState(false)
     const [dateSort, setDateSort] = useState(false)
     const dispatch = useDispatch()
 
@@ -23,7 +23,7 @@ export default function TodoContainer() {
     );
 
     let todoForm;
-    if (formDisplay) todoForm = <TodoForm submit={saveNewTodo} updateFormDisplay={setFormDisplay}/>;
+    if (isFormDisplay) todoForm = <TodoForm submit={saveNewTodo} updateFormDisplay={setIsFormDisplay}/>;
     
     useEffect(() => {
         dispatch(getTodos(currentUserId)) 
@@ -33,7 +33,7 @@ export default function TodoContainer() {
         <>
             <div className="todo-header">
                 <p id="header">Todos</p>
-                <BsFilePlus id="plus-icon" onClick={() => setFormDisplay(!formDisplay)} />
+                <BsFilePlus id="plus-icon" onClick={() => setIsFormDisplay(!isFormDisplay)} />
                 <hr id="hr"/>
             </div>
             { todoForm }
