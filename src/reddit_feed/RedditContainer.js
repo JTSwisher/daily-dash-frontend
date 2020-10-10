@@ -16,6 +16,7 @@ export default function RedditContainer() {
         fetch(`https://www.reddit.com/r/${subredditValue}.json`)
         .then(res => res.json())
         .then(res => {
+            console.log(res)
             setSubRedditResults(res.data.children)
         })
 
@@ -23,6 +24,7 @@ export default function RedditContainer() {
 
     //create useEffect to fetch reddit data
     //pass data into display data component which passes into data compoennet
+    //url and title for result render
 
     let redditForm;
     if (isFormDisplay) redditForm = <RedditForm search={searchReddit} updateFormDisplay={setIsFormDisplay}/>;
