@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { BsCardChecklist } from 'react-icons/bs'
-import { BsEnvelope } from 'react-icons/bs'
+import { FaRedditAlien } from 'react-icons/fa'
 
 export default function HomeMenuIcons() {
 
     return(
         <>
         <BsCardChecklist className="menu-icon"/>
-        <BsEnvelope className="menu-icon"/>
+        <FaRedditAlien className="menu-icon"/>
         </>
     )
 }
