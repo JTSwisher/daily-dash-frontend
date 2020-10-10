@@ -12,9 +12,7 @@ import NavigationBar from '../NavigationBar'
 export default function HomeContainer() {
     const [mainContentIdentifier, setMainContentidentifier] = useState('todos')
     const [mainContent, setMainContent] = useState()
-    //create state containers for selected content, default todos
 
-    
     useEffect(() => {
         mainContentIdentifier === 'todos' ? setMainContent(<TodoContainer />) : setMainContent(<RedditContainer />)
     }, [mainContentIdentifier])
