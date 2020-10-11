@@ -7,6 +7,7 @@ import Login from './authentication/Login'
 import Signup from './authentication/Signup'
 import HomeContainer from './home/HomeContainer'
 import ShowsContainer from './shows/ShowsContainer'
+import NewsContainer from './news/NewsContainer'
 
 function App() {
  
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/signup" component={Signup}/>
         <Route exact path="/dash/home" component={HomeContainer}/>
         <Route exact path="/dash/shows" component={ShowsContainer} />
+        <Route exact path="/dash/news" component={NewsContainer} />
       </Router>
     </div>
   );
