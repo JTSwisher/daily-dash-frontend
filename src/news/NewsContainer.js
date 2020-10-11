@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './News.css'
 import NavigationBar from '../NavigationBar'
+import NewsFilterForm from './NewsFilterForm'
 import DisplayNews from './DisplayNews'
 
 const API_KEY = process.env.REACT_APP_NEWS_API_KEY
@@ -8,12 +9,12 @@ const API_KEY = process.env.REACT_APP_NEWS_API_KEY
 export default function NewsContainer() {
     const [categorySelected, setCategorySelected] = useState('general')
     const [articles, setArticles] = useState([])
+    const [filterQuery, setFilterQuery] = useState('')
 
     useEffect(() => {
         fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${categorySelected}&pageSize=80&apiKey=${API_KEY}`)
         .then(res => res.json())
         .then(res => {
-            console.log(res.articles)
             setArticles(res.articles)
         })
         .catch(error => console.log(error))
@@ -37,10 +38,10 @@ export default function NewsContainer() {
                         <p id="news-header-category" onClick={ () => handleCategoryStateChange('health')} style={{color: (categorySelected === 'health' ? '#77A6F7' : 'white') }}>Health</p>
                     </div>
                     <div className="news-header-form">
-
+                        <NewsFilterForm filterCallback={setFilterQuery}/>
                     </div>
                 </div>
-                <DisplayNews articles={articles} />
+                <DisplayNews articles={articles} query={filterQuery}/>
             </div>
         </>
     )
