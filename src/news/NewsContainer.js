@@ -1,17 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import './News.css'
 import NavigationBar from '../NavigationBar'
+import DisplayNews from './DisplayNews'
 
 const API_KEY = process.env.REACT_APP_NEWS_API_KEY
 
 export default function NewsContainer() {
     const [categorySelected, setCategorySelected] = useState('general')
+    const [articles, setArticles] = useState([])
 
     useEffect(() => {
         fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${categorySelected}&pageSize=80&apiKey=${API_KEY}`)
         .then(res => res.json())
         .then(res => {
-            console.log(res)
+            console.log(res.articles)
+            setArticles(res.articles)
         })
         .catch(error => console.log(error))
     }, [categorySelected])
@@ -37,6 +40,7 @@ export default function NewsContainer() {
 
                     </div>
                 </div>
+                <DisplayNews articles={articles} />
             </div>
         </>
     )

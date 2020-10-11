@@ -23,28 +23,28 @@ export default function HomeContainer() {
 
     return(
         <>
-        <NavigationBar />
-        <div className="home-container">
-            <div className="home-greeting">
-                <p id="greeting">Welcome Jeff</p>
-                <Clock />
-                <CurrentDate />
-            </div>
-            <div className="menu">
-                <HomeMenuIcons setMain={setMainContentIdentifierCallback} />
-            </div>
-            <div className="home-content-main">
-                <div className="content">
-                    { mainContent }
+            <NavigationBar />
+            <div className="home-container">
+                <div className="home-greeting">
+                    <p id="greeting">Welcome {localStorage.getItem('name')}</p>
+                    <Clock />
+                    <CurrentDate />
                 </div>
-                <div className="google-search">
-                    <GoogleSearchBar />
+                <div className="menu">
+                    <HomeMenuIcons setMain={setMainContentIdentifierCallback} />
                 </div>
-                <div className="weather">
-                    <WeatherContainer />
+                <div className="home-content-main">
+                    <div className="content">
+                        { mainContent }
+                    </div>
+                    <div className="google-search">
+                        <GoogleSearchBar />
+                    </div>
+                    <div className="weather">
+                        <WeatherContainer />
+                    </div>
                 </div>
             </div>
-        </div>
         </>
     )
 }
