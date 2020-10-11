@@ -9,7 +9,7 @@ import { FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 
 export default function ShowsContainer() {
     const [shows, setShows] = useState([])
-    const [mainCategorySelected, setMainCategorySelected] = useState('movie')
+    const [categorySelected, setCategorySelected] = useState('movie')
     const [fetchUrl, setFetchUrl] = useState('movie')
     const [page, setPage] = useState(1)
 
@@ -22,15 +22,15 @@ export default function ShowsContainer() {
         fetch(type[`${fetchUrl}`](page))
         .then(res => res.json())
         .then(res => setShows(() => [...res["results"]]))
-    }, [mainCategorySelected, page]);
+    }, [categorySelected, page]);
 
     let handleCategoryStateChange = (c) => { 
         setShows(() => []);
         setPage(1)
         setFetchUrl(c);
-        setMainCategorySelected('');
+        setCategorySelected('');
         setTimeout(() => {
-            setMainCategorySelected(c)
+            setCategorySelected(c)
         }, 100);
     }
 
@@ -41,23 +41,23 @@ export default function ShowsContainer() {
 
     return(
         <>
-        <NavigationBar />
-        <div className="shows-page-container">
-            <div className="shows-header">
-                <div className="shows-header-categories">
-                    <p id="shows-header-category-1" onClick={ () => handleCategoryStateChange('movie')} style={{color: (mainCategorySelected === 'movie' ? '#77A6F7' : 'white') }}>Movies</p> 
-                    <p id="shows-header-category" onClick={ () => handleCategoryStateChange('tv')} style={{color: (mainCategorySelected === 'tv' ? '#77A6F7' : 'white') }}>TV</p> 
+            <NavigationBar />
+            <div className="shows-page-container">
+                <div className="shows-header">
+                    <div className="shows-header-categories">
+                        <p id="shows-header-category-1" onClick={ () => handleCategoryStateChange('movie')} style={{color: (categorySelected === 'movie' ? '#77A6F7' : 'white') }}>Movies</p> 
+                        <p id="shows-header-category" onClick={ () => handleCategoryStateChange('tv')} style={{color: (categorySelected === 'tv' ? '#77A6F7' : 'white') }}>TV</p> 
+                    </div>
+                    <div className="shows-header-form">
+                        <ShowsForm mainCategory={categorySelected} setShowState={handleFormSearchResults} />
+                    </div>
+                    <div className="shows-page-selector" style={{display: (shows.length <= 15 ? 'none' : '')}}>
+                        <FaArrowLeft id="pagination-icon" style={{display:(page === 1 ? 'none' : '')}} onClick={() => setPage(page - 1)}/>
+                        <FaArrowRight id="pagination-icon" onClick={() => setPage(page + 1)}/>
+                    </div>
                 </div>
-                <div className="shows-header-form">
-                    <ShowsForm mainCategory={mainCategorySelected} setShowState={handleFormSearchResults} />
-                </div>
-                <div className="shows-page-selector" style={{display: (shows.length <= 15 ? 'none' : '')}}>
-                    <FaArrowLeft id="pagination-icon" style={{display:(page === 1 ? 'none' : '')}} onClick={() => setPage(page - 1)}/>
-                    <FaArrowRight id="pagination-icon" onClick={() => setPage(page + 1)}/>
-                </div>
+                <DisplayShows shows={shows} />
             </div>
-            <DisplayShows shows={shows} />
-        </div>
         </>
     )
 
