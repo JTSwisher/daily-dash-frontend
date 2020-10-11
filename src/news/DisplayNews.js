@@ -3,7 +3,7 @@ import Article from './Article'
 
 export default function DisplayNews(props) {
 
-    let articles = props.query !== "" ? props.articles.filter(a => a.title.toLowerCase().includes(props.query.toLowerCase())) : props.articles
+    let articles = props.filterQuery !== "" ? props.articles.filter(a => a.title.toLowerCase().includes(props.filterQuery.toLowerCase())) : props.articles
     const finalArticles = articles.map((a, i) => <Article key={i} article={a} />)
 
     return (

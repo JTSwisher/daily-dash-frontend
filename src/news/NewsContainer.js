@@ -41,7 +41,7 @@ export default function NewsContainer() {
                         <NewsFilterForm filterCallback={setFilterQuery}/>
                     </div>
                 </div>
-                <DisplayNews articles={articles} query={filterQuery}/>
+                <DisplayNews articles={articles} filterQuery={filterQuery}/>
             </div>
         </>
     )

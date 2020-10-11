@@ -55,6 +55,14 @@
     font-family: 'Nunito', sans-serif;
 }
 
+#news-input:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+#news-input:focus:hover{
+    background-color: rgba(255,255,255,0.2);
+}
+
 .news-display {
     height: 80%;
     width: 95%;
