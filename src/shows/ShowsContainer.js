@@ -44,9 +44,9 @@ export default function ShowsContainer() {
         <NavigationBar />
         <div className="shows-page-container">
             <div className="shows-header">
-                <div className="shows-header-title">
-                    <p id="shows-header-title-1" onClick={ () => handleCategoryStateChange('movie')} style={{color: (mainCategorySelected === 'movie' ? '#77A6F7' : 'white') }}>Movies</p> 
-                    <p id="shows-header-title" onClick={ () => handleCategoryStateChange('tv')} style={{color: (mainCategorySelected === 'tv' ? '#77A6F7' : 'white') }}>TV</p> 
+                <div className="shows-header-categories">
+                    <p id="shows-header-category-1" onClick={ () => handleCategoryStateChange('movie')} style={{color: (mainCategorySelected === 'movie' ? '#77A6F7' : 'white') }}>Movies</p> 
+                    <p id="shows-header-category" onClick={ () => handleCategoryStateChange('tv')} style={{color: (mainCategorySelected === 'tv' ? '#77A6F7' : 'white') }}>TV</p> 
                 </div>
                 <div className="shows-header-form">
                     <ShowsForm mainCategory={mainCategorySelected} setShowState={handleFormSearchResults} />

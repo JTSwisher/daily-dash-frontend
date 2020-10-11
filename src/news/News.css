@@ -1,0 +1,27 @@
+.news-page-container {
+    margin-left: 10%;
+    height: 100;
+    width: 100%;
+    color: white;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.news-header {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    border: 1px solid white;
+}
+
+.news-header-categories {
+    margin-top: 40px;
+    display: flex;
+}
+
+#news-header-category {
+    font-size: 1.25em;
+    margin: 0px 35px 0px 0px;
+    cursor: pointer;
+    letter-spacing: 3px;
+}
