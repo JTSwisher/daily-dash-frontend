@@ -1,5 +1,5 @@
 .news-page-container {
-    margin-left: 10%;
+    margin-left: 8%;
     height: 100;
     width: 100%;
     color: white;
@@ -34,6 +34,7 @@
     flex-wrap: wrap;
     overflow: scroll;
     margin-bottom: 2%;
+    padding-left: 30px;
     box-shadow: 0 9px 9px -6px rgba(255,255,255,0.2);
 }
 
@@ -42,8 +43,18 @@
     flex-direction: column;
     text-align: center;
     display: block;
-    width: 250px;
-    height: 300px;
-    margin: 5px 20px 50px 20px;
+    width: 240px;
+    height: 200px;
+    margin: 15px 60px 20px 0px;
     padding: 0;
+}
+
+#image-container {
+}
+
+.article-image {
+    width: 100%;
+    height: 140px;
+    cursor: pointer;
+    border-radius: 10px;
 }
