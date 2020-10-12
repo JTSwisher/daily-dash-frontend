@@ -1,1 +1,1 @@
-![News Page Demo](demo/News.gif)
+![News Page Demo](demo/news.gif)
