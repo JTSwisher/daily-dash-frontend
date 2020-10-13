@@ -59,7 +59,7 @@ REACT_APP_NEWS_API_KEY = "API key"
 ```
 
 ### Installation
-Fork and clone the [Frontend Repo](https://github.com/JTSwisher/capstone_react_frontend) and the Backend Repo](https://github.com/JTSwisher/capstone_backend_api) to your local machine.
+Fork and clone the [Frontend Repo](https://github.com/JTSwisher/capstone_react_frontend) and the [Backend Repo](https://github.com/JTSwisher/capstone_backend_api) to your local machine.
 
 #### Backend
 Change directories into the backend local directory. Run bundle install to install dependencies. Ensure PostgreSQL is running on your machin, create and migrate the database.
@@ -69,7 +69,7 @@ $bundle install
 $rails db:create
 $rails db:migrate
 ```
-Run the following command to start your local server. The backend api will be run on port:3001, if 3001 is not used you will have to adjust the URLs used in the fetch calls on the frontend.
+Run the following command to start your local server. The backend api will run on port:3001 locally, if 3001 is not used you will have to adjust the URLs used in the API calls on the frontend.
 ```
 $rails s -p 3001
 ```
