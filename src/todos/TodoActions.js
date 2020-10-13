@@ -30,7 +30,7 @@ export const getTodos = userId => {
 export const todoCompleted = (userId, id) => {
     return(dispatch) => {
         dispatch({type: "DELETING_TODO"});
-        fetch(`http://localhost:3001/users/${userId}/todos/${id}`, {
+        fetch(`http://localhost:3001/api/v1/users/${userId}/todos/${id}`, {
             method: "DELETE",
             headers: {
                 "Accept":"application/json",

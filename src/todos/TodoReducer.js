@@ -10,7 +10,7 @@ const todoReducer = (state= {todos: [], requesting: false}, action) => {
             return {...state, todos: [...state.todos].concat(action.todos), requesting: false}
         case "DELETING_TODO":
             return {...state, todos: [...state.todos], requesting: true}
-        case "TODO_DELETED": //filter out todo based on id, return remaining todos
+        case "TODO_DELETED":
             const todos = state.todos.filter(todo => todo.id !== action.id);
             return { todos , requesting: false }
         default:
