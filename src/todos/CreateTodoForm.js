@@ -19,7 +19,7 @@ class TodoFrom extends Component {
         e.preventDefault();
         this.props.submit(this.state)
         this.props.updateFormDisplay(false)
-        this.setState({body: '', user_id: ''})
+        this.setState({body: ''})
     }
 
     render(){

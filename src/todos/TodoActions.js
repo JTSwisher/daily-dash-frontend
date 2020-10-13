@@ -1,4 +1,3 @@
-
 export const createTodo = (todo) => {
     return (dispatch) => {
         dispatch({type: "CREATING_TODO" });
@@ -17,7 +16,6 @@ export const createTodo = (todo) => {
     }
 };
 
-
 export const getTodos = userId => {
     return(dispatch) => {
         dispatch({type: "FETCHING_TODOS"});
@@ -28,3 +26,22 @@ export const getTodos = userId => {
         })
     }
 };
+
+export const todoCompleted = (userId, id) => {
+    return(dispatch) => {
+        dispatch({type: "DELETING_TODO"});
+        fetch(`http://localhost:3001/users/${userId}/todos/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Accept":"application/json",
+                "Content-Type":"application/json"
+            },
+        })
+        .then(() => {
+            dispatch({type: "TODO_DELETED", id})
+        })
+        .catch(error => {
+            console.log(error)
+        }) 
+    }
+}

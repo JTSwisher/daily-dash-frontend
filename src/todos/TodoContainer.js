@@ -9,26 +9,26 @@ import DisplayTodos from './DisplayTodos'
 export default function TodoContainer() {
     const [isFormDisplay, setIsFormDisplay] = useState(false)
     const [dateSort, setDateSort] = useState(false)
+    
+    let unsortedTodos = useSelector(state => state.todo.todos)
+    let sortedTodosNewestFirst = [...unsortedTodos].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    let todos = dateSort ? sortedTodosNewestFirst : unsortedTodos;
+
     const dispatch = useDispatch()
-
-    const unsortedTodos = useSelector(state => state.todo.todos)
-    const sortedNewestFirstTodos = [...unsortedTodos].sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-    let todos = dateSort ? sortedNewestFirstTodos : unsortedTodos;
-
-    let currentUserId = localStorage.getItem('userId')
-
+    
     const saveNewTodo = useCallback(
         (todo) => dispatch(createTodo(todo)),
         [dispatch]
     );
 
-    let todoForm;
-    if (isFormDisplay) todoForm = <TodoForm submit={saveNewTodo} updateFormDisplay={setIsFormDisplay}/>;
-    
+    let currentUserId = localStorage.getItem('userId')
     useEffect(() => {
         dispatch(getTodos(currentUserId)) 
     }, [dispatch, currentUserId]);
 
+    let todoForm;
+    if (isFormDisplay) todoForm = <TodoForm submit={saveNewTodo} updateFormDisplay={setIsFormDisplay}/>;
+    
     return (
         <>
             <div className="todo-header">
