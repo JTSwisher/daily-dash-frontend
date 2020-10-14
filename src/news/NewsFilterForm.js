@@ -9,7 +9,7 @@ export default function NewsFilterForm(props) {
     }
 
     return(
-        <form className="news-form">
+        <form className="news-form" onSubmit={e => e.preventDefault()}>
             <input id="news-input" value={query} onChange={(e) => handleInputChange(e)}placeholder="Filter.."/>
         </form>
     )
