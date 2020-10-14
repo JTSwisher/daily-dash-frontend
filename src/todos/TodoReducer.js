@@ -19,4 +19,3 @@ const todoReducer = (state= {todos: [], requesting: false}, action) => {
 }
 
 export default todoReducer;
-
