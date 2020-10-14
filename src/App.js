@@ -11,15 +11,25 @@ import NewsContainer from './news/NewsContainer'
 
 function App() {
  
+  function isLoggedIn() {
+    return ( localStorage.token ? true : false )
+  }
+
   return (
     <div className="app">
       <Router history={history}>
         <Route exact path="/" component={LandingContainer}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signup" component={Signup}/>
-        <Route exact path="/dash/home" component={HomeContainer}/>
-        <Route exact path="/dash/shows" component={ShowsContainer} />
-        <Route exact path="/dash/news" component={NewsContainer} />
+        <Route exact path="/dash/home" component={HomeContainer}>
+          {isLoggedIn() ? history.push("/dash/home") : history.push("/") }
+        </Route>
+        <Route exact path="/dash/shows" component={ShowsContainer}>
+          {isLoggedIn() ? history.push("/dash/shows") : history.push("/") }
+        </Route>
+        <Route exact path="/dash/news" component={NewsContainer}>
+          {isLoggedIn() ? history.push("/dash/news") : history.push("/") }
+        </Route>
       </Router>
     </div>
   );
