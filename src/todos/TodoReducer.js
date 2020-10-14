@@ -7,7 +7,7 @@ const todoReducer = (state= {todos: [], requesting: false}, action) => {
         case "FETCHING_TODOS":
             return {...state, todos: [], requesting: true}
         case "TODOS_RECEIVED":
-            return {...state, todos: [...state.todos].concat(action.todos), requesting: false}
+            return {...state, todos: [...action.todos], requesting: false}
         case "DELETING_TODO":
             return {...state, todos: [...state.todos], requesting: true}
         case "TODO_DELETED":
@@ -19,3 +19,4 @@ const todoReducer = (state= {todos: [], requesting: false}, action) => {
 }
 
 export default todoReducer;
+
