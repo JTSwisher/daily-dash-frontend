@@ -1,3 +1,11 @@
+function handleErrors(response) {
+    if (!response.ok) {
+        alert(response.statusText)
+        throw Error(response.statusText);
+    }
+    return response;
+}
+
 export const createTodo = (todo) => {
     return (dispatch) => {
         dispatch({type: "CREATING_TODO" });
@@ -8,12 +16,14 @@ export const createTodo = (todo) => {
                 "Accept":"application/json",
                 "Content-Type":"application/json"
             },
-            body: JSON.stringify({todo: todo, user_id: todo.user_id})
+            body: JSON.stringify({todo: todo})
         })
-        .then(response => response.json())
+        .then(handleErrors)
+        .then(res => res.json())
         .then(todo => {
-            dispatch({type: "TODO_CREATED", todo});
+                dispatch({type: "TODO_CREATED", todo});
         })
+        .catch(error => console.log(error))
     }
 };
 
@@ -25,9 +35,10 @@ export const getTodos = userId => {
                 "Authorization": "Bearer " + localStorage.token
             }
         })
-        .then(response => response.json())
+        .then(handleErrors)
+        .then(res => res.json())
         .then(todos => {
-            dispatch({type: "TODOS_RECEIVED", todos})
+                dispatch({type: "TODOS_RECEIVED", todos})
         })
     }
 };
@@ -43,9 +54,8 @@ export const todoCompleted = (userId, id) => {
                 "Content-Type":"application/json"
             },
         })
-        .then(() => {
-            dispatch({type: "TODO_DELETED", id})
-        })
+        .then(handleErrors)
+        .then(() => dispatch({type: "TODO_DELETED", id}))
         .catch(error => {
             console.log(error)
         }) 
