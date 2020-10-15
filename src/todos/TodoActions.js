@@ -4,6 +4,7 @@ export const createTodo = (todo) => {
         fetch(`http://localhost:3001/api/v1/users/${todo.user_id}/todos`, {
             method: "POST",
             headers: {
+                "Authorization": "Bearer " + localStorage.token,
                 "Accept":"application/json",
                 "Content-Type":"application/json"
             },
@@ -19,7 +20,11 @@ export const createTodo = (todo) => {
 export const getTodos = userId => {
     return(dispatch) => {
         dispatch({type: "FETCHING_TODOS"});
-        fetch(`http://localhost:3001/api/v1/users/${userId}/todos`)
+        fetch(`http://localhost:3001/api/v1/users/${userId}/todos`, {
+            headers: {
+                "Authorization": "Bearer " + localStorage.token
+            }
+        })
         .then(response => response.json())
         .then(todos => {
             dispatch({type: "TODOS_RECEIVED", todos})
@@ -33,6 +38,7 @@ export const todoCompleted = (userId, id) => {
         fetch(`http://localhost:3001/api/v1/users/${userId}/todos/${id}`, {
             method: "DELETE",
             headers: {
+                "Authorization": "Bearer " + localStorage.token,
                 "Accept":"application/json",
                 "Content-Type":"application/json"
             },
