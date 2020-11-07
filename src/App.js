@@ -12,7 +12,7 @@ import NewsContainer from './news/NewsContainer'
 function App() {
  
   function isLoggedIn() {
-    return ( localStorage.token ? true : false )
+    return localStorage.token ? true : false
   }
 
   return (
@@ -21,14 +21,14 @@ function App() {
         <Route exact path="/" component={LandingContainer}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signup" component={Signup}/>
-        <Route exact path="/dash/home" component={HomeContainer}>
-          {isLoggedIn() ? history.push("/dash/home") : history.push("/") }
-        </Route>
         <Route exact path="/dash/shows" component={ShowsContainer}>
           {isLoggedIn() ? history.push("/dash/shows") : history.push("/") }
         </Route>
         <Route exact path="/dash/news" component={NewsContainer}>
           {isLoggedIn() ? history.push("/dash/news") : history.push("/") }
+        </Route>
+        <Route exact path="/dash/home" component={HomeContainer}>
+          {isLoggedIn() ? history.push("/dash/home") : history.push("/") }
         </Route>
       </Router>
     </div>
